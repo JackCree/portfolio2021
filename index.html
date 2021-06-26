@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!--Favicon-->
+    <link rel="icon" type="image/svg+xml" href="favicon01.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--General Description-->
+    <meta http-equiv="Cache-control" content="public">
+    <meta content="text/html; charset=UTF-8; X-Content-Type-Options=nosniff" http-equiv="Content-Type" />
+    <meta name="theme" content="#000">
+    <meta name="description" content="Hire a creative Developer & Front End Designer. Building animations and interactive expereince, artworks and film-maker">
+    <meta name="robots" content="index, follow, max-snippet: -1, max-image-preview:large, max-video-preview:-1">
+    <!--Title-->
+    <title>Quentin Feret - Front End Designer - Graphist</title>
+    <!--Open graph -->
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Quentin FERET | Front End Developper - Graphist">
+    <meta property="og:description" content="Hire a creative Developer & Front End Designer. Building animations and interactive expereince, artworks and film-maker">
+    <meta property="og:url" content="#">
+    <meta property="og:site_name" content="Quentin Féret">
+    <!--Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="#">
+    <meta name="twitter:title" content="Quentin Féret">
+    <meta name="twitter:description" content="Hire a creative Developer & Front End Designer. Building animations and interactive expereince, artworks and film-maker">
+    <meta name="twitter:image" content="./img/logo-quentin-feret.jpg">
+    <!--Font Awesome icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <!--CSS Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+    <body>
+      <!--Progress Bar -->
+      <div id=progressbar></div>
+      <div id="scrollPath"></div>
+      <!--First Part: Intro -->
+      <section id="intro"> 
+      <header class="hidden">
+        <a href="#" class="logo"><img alt="logo for the website" src="./img/logo-quentin-feret.jpg"><span>Creative Tech</span></a>
+        <ul class="navigation ">
+          <li><a href="#" class="active" style="--i:1;">About</a></li>
+          <li><a href="#portfolio" style="--i:2;">Works</a></li>
+          <li><a href="#" style="--i:3;">Skills</a></li>
+          <li><a href="#" style="--i:4;">Blog</a></li>
+          <li><a href="#" style="--i:5;">Contact</a></li>
+        </ul>
+      </header>
+      <div class="toggle" onclick="toggleMenu()"></div>
+      <div class="content">
+        <div class="card apparition">
+          <h1 class="title">Hello, I'm Quentin Feret, a creative developer</h1>
+          <div class="subtitle">
+            <h2 style="--k:1">Front End-Developer /</h2>
+            <h2 style="--k:2">Graphist /</h2> 
+            <h2 style="--k:3">UX Designer</h2>
+          </div>
+        </div>
+        <ul class="social">
+          <li style="--j:1"><a href="https://www.behance.net/quentinjeanferet" id="socialnetwork01" title="link to the design portfolio" target="_blank"><i class="fab fa-behance"></i></a></li>
+          <li style="--j:2"><a href="https://www.deviantart.com/jackcree" title="link to the graphic portfolio" id="socialnetwork02" target="_blank"><i class="fab fa-deviantart"></i></a></li>
+          <li style="--j:3"><a href="https://github.com/" title="link to the code portfolio" id="socialnetwork03" target="_blank"><i class="fab fa-github"></i></a></li>
+          <li style="--j:4"><a href="https://www.instagram.com/q_feret/?hl=en" title="link to the blog where all publications" id="socialnetwork06" target="_blank"><i class="fab fa-instagram"></i></a></li>
+          <li style="--j:5"><a href="https://dribbble.com/QuentinFeret" title="link to the illustrations and animations portfolio" id="socialnetwork04" target="_blank"><i class="fab fa-dribbble"></i></a></li>
+          <li style="--j:6"><a href="https://codepen.io/quentin-feret" title="link to the code playground" id="socialnetwork05" target="_blank"><i class="fab fa-codepen"></i></a></li>
+          <li style="--j:7"><a href="https://twitter.com/Jack_Teref" title="link to the twitter accound" id="socialnetwork07" target="_blank"><i class="fab fa-twitter" ></i></a></li>
+        </ul>
+        <div class="social-description"></div>
+        <a href="#" title="link to mail box contact" class="button" id="contactme"><div class='btn-text'>Contact Me</div></a>
+      </div>
+
+      <h2 class="mouse-text apparition">Click and Hold</h2>
+      <h2 class= "lightspeed-title disparition">Ready to go to <div id="lightspeed">LightSpeed ?</div></h2>
+      <div class="lightspeed"></div>
+
+      <div class="scroll_down" id="scrolldown01">
+        <p>Scroll Down</p>
+        <i class="fa fa-arrow-right"></i>
+      </div>
+      <div class="scroll_down" id="scrolldown02">
+        <p>Scroll Down</p>
+        <i class="fa fa-arrow-right"></i>
+      </div>
+    </section>
+
+    <div class="loader-wrapper">
+      <div class='body'>
+        <div class="body-01">
+          <div class="body-02"></div>
+          <div class="body-02"></div>
+          <div class="body-02"></div>
+          <div class="body-02"></div>
+        </div>
+        <div class='base'>
+          <div class="base-01"></div>
+          <div class='face'></div>
+        </div>
+      </div>
+      <div class='longfazers'>
+        <div class="longfazers-01"></div>
+        <div class="longfazers-01"></div>
+        <div class="longfazers-01"></div>
+        <div class="longfazers-01"></div>
+      </div>
+      <h2>Loading</h2>
+
+      <div class="progress" id="progress_div">
+        <div class="bar" id="bar1"></div>
+        <div class="percent" id="percent1"></div>
+        <input type="hidden" id="progress_width" value="0">
+      </div>
+    </div>
+
+    <!--Second Part: Portfolio -->
+    <section id="portfolio">
+      <!--Title of the section-->
+      <div class="title">
+        <h2>My Portfolio</h2>
+        <p>A small gallery of recent projects chosen by me. I've done them all together with amazing people from companies around the globe. It's only a drop in the ocean compared to the entire list.</p>
+      </div>
+      <!--Filter-->
+      <div class="filters">
+        <button>Specify your discoveries about my projects <i class="fas fa-sort-down"></i></button>
+        <div class="parameters">
+          <!--Fist Line of filters-->
+          <!--Tags-->
+          <div class="taxonomy">
+            <h3>Categories</h3>
+            <ul>
+              <li class="list active" data-filter="all">All</li>
+              <li class="list" data-filter="Artwork">Artworks</li>
+              <li class="list" data-filter="Photoshop">Photoshop</li>
+            </ul>
+          </div>  
+          <!--Second Line of filters-->
+          <div class="sliders">
+            <!--Difficulty Range-->
+            <div class="sliderContainer">
+              <div class="sliderTitle">
+                <h3><span>Difficulty</span> of the project</h3><i class="far fa-question-circle"></i>
+              </div>
+              <div class="slide-range">
+                <div class="middle">
+                  <input type="range" title="rangeSliderLeft" id="input-left1" min="0" max="5" value="1">
+                  <input type="range" title="rangeSliderRight" id="input-right1" min="0" max="5" value="5">
+                  <div class="graduation">
+                    <span>0</span>
+                    <span>1</span>
+                    <span>2</span>
+                    <span>3</span>
+                    <span>4</span>
+                    <span>5</span>
+                  </div>
+                  <div class="slider">
+                    <div class="track"></div>
+                    <div class="range"></div>
+                    <div class="thumb left"></div>
+                    <div class="thumb right"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--Duration Range-->
+            <div class="sliderContainer" id="durationRange">
+              <div class="sliderTitle">
+                <h3><span>Duration</span> of the project</h3><i class="far fa-question-circle"></i>
+              </div>
+              <div class="slide-range">
+                <div class="middle">
+                  <input type="range" title="rangeSliderLeft" id="input-left2" min="0" max="5" value="1">
+                  <input type="range" title="rangeSliderRight" id="input-right2" min="0" max="5" value="5">
+                  <div class="graduation2">
+                    <span>1 day</span>
+                    <span>1 week</span>
+                    <span>1 month</span>
+                    <span>6 months</span>
+                    <span>1 year</span>
+                  </div>
+                  <div class="slider">
+                    <div class="track"></div>
+                    <div class="range"></div>
+                    <div class="thumb left"></div>
+                    <div class="thumb right"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--Third Line of filters-->
+          <div class="search_date_filters">
+            <!--Search Input-->
+            <div class="search">
+              <input type="text" title="Search" id="myInput" placeholder="Search a project"/>
+              <div class="icon">
+                <i class="fas fa-search"></i>
+              </div>
+            </div>
+            <!--Sort by Date-->
+            <div id="date">
+              <button id="dateInput">Sort By Date</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Gallery-->
+      <div class="galleryContainer" id="blur">      
+      </div>
+      <!-- Gallery Popup-->
+      <div id="popup">
+        <ul class="socialicons">
+            <li><a href="https://gumroad.com/quentinferet" target="_blank" title="Link to the PSD Files"><img src="./img/icones/gumroad.png"></a></li>
+            <li><a href="https://www.deviantart.com/jackcree" target="_blank" title="Link to the High Resolution Artworks"><img src="./img/icones/deviantart.png"></a></li>
+        </ul>
+        <div class="popupContainer">
+          <div class="clip clip1">
+              <div class="content">
+                <h2><span>Final</span> Artwork</h2>
+                <p>Here is the final version with color balance effects and gradient color background plus a black square with the inscrustation effect. </p>
+              </div>
+            </div>
+            <div class="clip clip2">
+              <div class="content">
+                <h2><span>Light</span> phase</h2>
+                <p>With the pen tool and white and blue color, the light is added with 2 layers combined with bright and raw light respectly for each one.</p>
+              </div>
+            </div>
+            <div class="clip clip3">
+              <div class="content">
+                <h2><span>Shadow</span> phase </h2>
+                <p>With black and grey color, on 5 differents layers, the shadow is appiled from the strongest to the weakest with 5 levels of opacity (100%, 65%, 50%, 25%, 10%). </p>
+              </div>
+            </div>
+            <div class="clip clip4">
+              <div class="content">
+                <h2><span>Color</span> phase</h2>
+                <p>With the magic wand by adjusting each selection with a dilation of one to two pixels, add the brightest color for the artwork.</p>
+              </div>
+            </div>
+            <div class="clip clip5">
+            <div class="content">
+              <h2><span>Lineart</span> phase</h2>
+                <p>With a 80% smoothing pen and black color, work on the outline and details from the medium pen (4px) then the largest (8px) to finish with the finer2px).</p>
+              </div>
+            </div>
+            <div class="clip clip6">
+              <div class="content">
+                <h2><span>Sketch</span> phase</h2>
+                <p>With a 20% black color smoothing pen, build the pose of the mannequin and then put each elements as a volume without thing about the details, only the shape.</p>
+              </div>
+            </div>
+        </div>        
+      </div>
+      <!--3D Globe with texture-->
+      <canvas id="globe"></canvas>
+      <!--Add Shooting stars-->
+      <div id="shooting_stars"></div>
+      <!--Stars Background-->
+      <canvas id="stars"></canvas>
+    </section>
+    
+    <!-- Call for JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!-- Vanilla Titl-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js" integrity="sha512-SttpKhJqONuBVxbRcuH0wezjuX+BoFoli0yPsnrAADcHsQMW8rkR84ItFHGIkPvhnlRnE2FaifDOUw+EltbuHg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script type="module" src="./js/main.js"></script>
+    <script type="module" src="./js/vanilla.js"></script>
+    <script type="module" src="./js/portfolio.js"></script>
+  </body>
+</html>
