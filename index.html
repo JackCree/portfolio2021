@@ -30,6 +30,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <!--CSS Stylesheet -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!--Google Font Icons-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   </head>
     <body>
       <!--Progress Bar -->
@@ -42,7 +44,7 @@
         <ul class="navigation ">
           <li><a href="#" class="active" style="--i:1;">About</a></li>
           <li><a href="#portfolio" style="--i:2;">Works</a></li>
-          <li><a href="#" style="--i:3;">Skills</a></li>
+          <li><a href="#skills" style="--i:3;">Skills</a></li>
           <li><a href="#" style="--i:4;">Blog</a></li>
           <li><a href="#" style="--i:5;">Contact</a></li>
         </ul>
@@ -258,7 +260,153 @@
       <!--Stars Background-->
       <canvas id="stars"></canvas>
     </section>
-    
+    <!-- Container with 3 columns   1- information about the current level
+                                    2- the map
+                                    3- checklist for each skills-->
+  <section class="skillcontainer" id="app">
+    <div class="skill_intro">
+      <h2>My skills</h2>
+      <p>Since the beginning of my journey as a freelance developer nearly 1 years ago, I've collaborated with talented people to create web products bor both business and consume use.</p>
+      <p>The main area of my expertise is front-end development, HTML, CSS, JS, building features, animations, responsive website, and interactive layouts.</p>
+      <p>Here is where I am and where I'm going</p>
+    </div>
+    <div class="skillcontainer_inner" id="skills">  
+      <!--------------------------
+      First section: Current level
+      ---------------------------->
+        <div class="skill skill_summary" id="skills">
+          <h2 class="summary_title">FRONT-END <span>SKILLTREE</span></h2>
+          <h3 class="summary_level_desc">ACTUAL RANK</h3>
+          <div class='summary_level-rank'>
+            <h2 class="summary_level">FRONT-END</h2>
+            <h2 class="summary_level" id="grade">{{ranks[currentRank].name}}</h2>
+          </div>
+          <img class="summary_img" :src="ranks[currentRank].picUrl">
+          <!--Design of the bulb with the text for each level-->
+          <div class="summary_message">
+              <svg class="border" viewBox="0 0 300 180">
+                <path d="M142.8,5.2l-22.5,8.3-4.7,1.7,4.6,2,12.3,5.3-17.1,9.9L109,36.2H297.2V178H2.8V36.2H60.4l.4-.2,33-13.6,3-1.3L94.4,19l-5.9-5.2,54.3-8.6M162.5,0,83.9,12.5l9.1,8L60,34.2H.8V180H299.2V34.2H116.4l20.5-12-16-6.8L162.5,0Z">              
+                </path>
+              </svg>
+              <div class="text" v-html="ranks[currentRank].sentence"></div>
+          </div>
+        </div>
+        <!--------------------------
+        Second Level: Map
+        ---------------------------->
+        <div class="skill skill_progress">
+          <!--Basics Line-->
+          <div class="level_progress">
+              <div class="progress_icon">
+                <img src="./img/skills-icones-basics.png" alt="">
+              </div>
+              <div class="progress_lists">
+                <ul class="lists_block">
+                    <li class="list" v-for="(branch,i) in skillDatas[0].branch" :class="{active: branch.active, completed: branch.recommendComplete}">
+                      <a href="#" v-on:click.prevent="focusList(branch)">
+                        <i class="material-icons">{{branch.iconName}}</i>
+                      </a>
+                      <small class="recommend">
+                        <i class="material-icons">settings</i>
+                        <span>{{currentComplete(branch.recommend)}}/{{branch.recommend!==null? branch.recommend.length:"0"}}</span>
+                      </small>
+                      <small class="optional">
+                        <i class="material-icons">filter_tilt_shift</i>
+                        <span>{{currentComplete(branch.optional)}}/{{branch.optional!==null? branch.optional.length:"0"}}</span>
+                      </small>
+                    </li>
+                </ul>
+            </div>
+          </div>
+          <!--CSS Line-->
+          <div class="level_progress" :class="{disabled: !skillDatas[0].levelComplete}">
+              <div class="progress_icon"><img src="./img/skills-icones-css.png" alt=""></div>
+              <div class="progress_lists">
+                <ul class="lists_block">
+                    <li class="list" v-for="num in 3" :class="{active: skillDatas[1].branch[num-1].active, completed: skillDatas[1].branch[num-1].recommendComplete}">
+                      <a href="#" v-on:click.prevent="focusList(skillDatas[1].branch[num-1])"><i class="material-icons">{{skillDatas[1].branch[num-1].iconName}}</i></a>
+                      <small class="recommend"><i class="material-icons">settings</i><span>{{currentComplete(skillDatas[1].branch[num-1].recommend)}}/{{skillDatas[1].branch[num-1].recommend!==null? skillDatas[1].branch[num-1].recommend.length:0}}</span></small>
+                      <small class="optional"><i class="material-icons">filter_tilt_shift</i><span>{{currentComplete(skillDatas[1].branch[num-1].optional)}}/{{skillDatas[1].branch[num-1].optional!==null? skillDatas[1].branch[num-1].optional.length:"0"}}</span></small>
+                    </li>
+                </ul>
+                <ul class="lists_block">
+                    <li class="list" v-for="num in 2" :class="{active: skillDatas[1].branch[num+2].active, completed: skillDatas[1].branch[num+2].recommendComplete}">
+                      <a href="#" v-on:click.prevent="focusList(skillDatas[1].branch[num+2])"><i class="material-icons">{{skillDatas[1].branch[num+2].iconName}}</i></a>
+                      <small class="recommend"><i class="material-icons">settings</i><span>{{currentComplete(skillDatas[1].branch[num+2].recommend)}}/{{skillDatas[1].branch[num+2].recommend!==null? skillDatas[1].branch[num+2].recommend.length:0}}</span></small>
+                      <small class="optional"><i class="material-icons">filter_tilt_shift</i><span>{{currentComplete(skillDatas[1].branch[num+2].optional)}}/{{skillDatas[1].branch[num+2].optional!==null? skillDatas[1].branch[num+2].optional.length:0}}</span></small>
+                    </li>
+                </ul>
+              </div>
+          </div>
+          <!--JS Line-->
+          <div class="level_progress" :class="{disabled: !skillDatas[1].levelComplete}">
+              <div class="progress_icon"><img src="./img/skills-icones-javascript.png" alt=""></div>
+              <div class="progress_lists">
+                <ul class="lists_block">
+                    <li class="list" v-for="num in 2" :class="{active: skillDatas[2].branch[num-1].active, completed: skillDatas[2].branch[num-1].recommendComplete}">
+                      <a href="#" v-on:click.prevent="focusList(skillDatas[2].branch[num-1])"><i class="material-icons">{{skillDatas[2].branch[num-1].iconName}}</i></a>
+                      <small class="recommend"><i class="material-icons">settings</i><span>{{currentComplete(skillDatas[2].branch[num-1].recommend)}}/{{skillDatas[2].branch[num-1].recommend!==null? skillDatas[2].branch[num-1].recommend.length:0}}</span></small>
+                      <small class="optional"><i class="material-icons">filter_tilt_shift</i><span>{{currentComplete(skillDatas[2].branch[num-1].optional)}}/{{skillDatas[2].branch[num-1].optional!==null? skillDatas[2].branch[num-1].optional.length:0}}</span></small>
+                    </li>
+                </ul>
+                <ul class="lists_block">
+                    <li class="list" v-for="num in 3" :class="{active: skillDatas[2].branch[num+1].active, completed: skillDatas[2].branch[num+1].recommendComplete}">
+                      <a href="#" v-on:click.prevent="focusList(skillDatas[2].branch[num+1])"><i class="material-icons">{{skillDatas[2].branch[num+1].iconName}}</i></a>
+                      <small class="recommend"><i class="material-icons">settings</i><span>{{currentComplete(skillDatas[2].branch[num+1].recommend)}}/{{skillDatas[2].branch[num+1].recommend!==null? skillDatas[2].branch[num+1].recommend.length:0}}</span></small>
+                      <small class="optional"><i class="material-icons">filter_tilt_shift</i><span>{{currentComplete(skillDatas[2].branch[num+1].optional)}}/{{skillDatas[2].branch[num+1].optional!==null? skillDatas[2].branch[num+1].optional.length:0}}</span></small>
+                    </li>
+                </ul>
+              </div>
+          </div>
+          <!--Management Line-->
+          <div class="level_progress" :class="{disabled: !skillDatas[2].levelComplete}">
+              <div class="progress_icon"><img src="./img/skills-icones-managers.png" alt=""></div>
+              <div class="progress_lists">
+              <ul class="lists_block">
+                  <li class="list" v-for="(branch,i) in skillDatas[3].branch" :class="{active: branch.active, completed: branch.recommendComplete}">
+                    <a href="#" v-on:click.prevent="focusList(branch)"><i class="material-icons">{{branch.iconName}}</i></a>
+                    <small class="recommend"><i class="material-icons">settings</i><span>{{currentComplete(branch.recommend)}}/{{branch.recommend!==null? branch.recommend.length:"0"}}</span></small>
+                    <small class="optional"><i class="material-icons">filter_tilt_shift</i><span>{{currentComplete(branch.optional)}}/{{branch.optional!==null? branch.optional.length:"0"}}</span></small>
+                  </li>
+              </ul>
+              </div>
+          </div>
+        </div>
+        <!----------------------------------
+        Third Level: Checklist details
+        ----------------------------------->
+        <div class="skill skill_detail">
+          <div class="detail_top">
+              <div class="logo"><i class="material-icons">{{currentBranch.iconName}}</i></div>
+              <div class="name" v-html="currentBranch.name.replace(&quot; &quot;, &quot;&lt;br&gt;&quot;)"></div>
+          </div>
+          <div class="detail_bottom">
+              <div class="unit recommend" v-if="currentBranch.recommend!==null">
+                <div class="top">
+                    <div class="logo"><i class="material-icons">settings</i></div>
+                    <div class="name">RECOMMENDATIONS</div>
+                </div>
+                <div class="bottom">
+                    <li v-for="list in currentBranch.recommend" :class="{completed:list.complete}" v-on:click="toggleListComplete(list)">{{list.name}}</li>
+                </div>
+              </div>
+              <div class="unit optional" v-if="currentBranch.optional!==null">
+                <div class="top">
+                    <div class="logo"><i class="material-icons">filter_tilt_shift</i></div>
+                    <div class="name">OPTIONAL</div>
+                </div>
+                <div class="bottom">
+                  <ul>
+                    <li v-for="list in currentBranch.optional" :class="{completed:list.complete}" v-on:click="toggleListComplete(list)">{{list.name}}</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </section>
+    <!-- Call for VueJs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.js"></script>    
     <!-- Call for JQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <!-- Vanilla Titl-->
@@ -268,5 +416,6 @@
     <script type="module" src="./js/main.js"></script>
     <script type="module" src="./js/vanilla.js"></script>
     <script type="module" src="./js/portfolio.js"></script>
+    <script type="module" src="./js/skills.js"></script>
   </body>
 </html>

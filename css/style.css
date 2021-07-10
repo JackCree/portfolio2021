@@ -1955,3 +1955,622 @@ input[type=range]::-webkit-slider-thumb {
     overflow: hidden;
   }
 }
+
+/*Skills Section*/
+.skillcontainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width:  100vw;
+    height: 140vh;
+    overflow: hidden;
+    background-image: -webkit-gradient(linear,left top,right top,from (#250060), color-stop(50%,#000),to (#250060));
+    background-image: -o-linear-gradient(left,#250060 0,#000 50%,#250060 100%);
+    background-image: linear-gradient(90deg,#250060 0,#000 50%,#250060 100%);
+}
+.skillcontainer:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 140vh;
+    background: linear-gradient(#f00, #f0F);
+    clip-path: circle(20% at  95% 100%);
+}
+.skillcontainer:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#2196f3, #e91e63);
+    clip-path: circle(15% at 15% 15%);
+}
+/*Skills Section : part 01 : Rank*/
+.skillcontainer .skill_intro {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    width:  78vw;
+    height: 200px;
+    background: rgba(255,255,255,0.1);
+    padding: 20px;
+    margin-left: 200px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    border-left: 1px solid rgba(255,255,255,0.2);
+    backdrop-filter:  blur(10px);
+    z-index: 1;
+}
+.skillcontainer .skill_intro h2 {
+    position: relative;
+    color: rgba(255,255,255,1);
+    font-size: 2rem;
+    font-family: 'Big Shoulders Display', cursive;;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+.skillcontainer .skill_intro p {
+    position: relative;
+    font-size: 1rem;
+    width:  100%;
+    color:  rgba(255,255,255,1);
+    margin: 5px auto 5px 0;
+}
+.skillcontainer .skillcontainer_inner {
+    position: relative;
+    display: flex;
+    width: 80vw;
+    justify-content: space-between;
+    padding: 10px;
+    margin-left: 200px;
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 5px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    border-left: 1px solid rgba(255,255,255,0.2);
+    backdrop-filter:  blur(10px);
+    z-index: 1;
+}
+.skillcontainer .skillcontainer_inner .skill {
+    position: relative;
+    padding: 10px;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 5px;
+}
+.skillcontainer .skillcontainer_inner .skill_summary {
+    position: relative;
+    width:  330px;
+    height: 75%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    z-index: 1;
+}
+.skillcontainer .skillcontainer_inner .skill_summary .summary_title {
+    position: relative;
+    margin: 0;
+    font-family: 'Big Shoulders Display', cursive;
+    margin-bottom: 10px;
+    color: #ff0093;
+    font-size: 2rem;
+    font-weight: 700;
+}
+.skillcontainer .skillcontainer_inner .skill_summary .summary_title span {
+    font-family: 'Big Shoulders Display', cursive;
+    font-weight: 900;
+}
+.skillcontainer .skillcontainer_inner .skill_summary .summary_level_desc {
+    position: relative;
+    margin: 8px 0;
+    padding: 5px 15px;
+    background-color: #535EE9;
+    color: #BBBBFB;
+    font-size: 10px;
+    font-weight: 400;
+}
+.skillcontainer .skillcontainer_inner .skill_summary .summary_level-rank {
+    position: relative;
+    display: flex;
+    width: 300px;
+    justify-content: center;
+    background-color: rgba(255,255,255,0.1);
+    border-top: 1px solid rgba(255,255,255,0.2);
+    border-left: 1px solid rgba(255,255,255,0.2);
+    padding: 5px 10px;
+
+}
+.skillcontainer .skillcontainer_inner .skill_summary .summary_level-rank .summary_level {
+    position: relative;
+    margin: 0 10px 10px 0;
+    font-size: 1.2rem;
+    color:  rgba(255,255,255,1);
+    border-bottom: 4px solid #8000ff;
+}
+.skillcontainer .skillcontainer_inner .skill_summary .summary_img {
+    position: relative;
+    max-width: 250px;
+    -ms-flex-item-align: center;
+    align-self: center;
+    -webkit-animation: shipmove 2s infinite alternate ease-in-out;
+    animation: shipmove 2s infinite alternate ease-in-out;
+}
+.skillcontainer .skillcontainer_inner .skill_summary .summary_message {
+    padding-top: 5px;
+    position: relative;
+    -ms-flex-item-align: stretch;
+    align-self: stretch;
+}
+.skillcontainer .skillcontainer_inner .skill_summary .summary_message .border {
+    width: 100%;
+    height: 100%;
+    transform: scaleX(-1);
+}
+.skillcontainer .skillcontainer_inner .skill_summary .summary_message .border path {
+    fill: #ff0093;
+}
+.skillcontainer .skillcontainer_inner .skill_summary .summary_message .text {
+    padding: 20px;
+    position: absolute;
+    left: 0;
+    top: 60%;
+    color: rgba(255,255,255,1);
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    line-height: 1.8;
+}
+.skillcontainer .skillcontainer_inner .skill_summary .summary_message .highline {
+    color: #ff0093;
+    font-weight: 700;
+}
+/*Skills Section : part 02 : SkillTree*/
+.skillcontainer .skillcontainer_inner .skill_progress {
+    position: relative;
+    width: 35%;
+}
+.skillcontainer .skillcontainer_inner .skill_progress .level_progress {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-transition: opacity .5s;
+    -o-transition: opacity .5s;
+    transition: opacity .5s;
+}
+.skillcontainer .skillcontainer_inner .skill_progress .level_progress .progress_icon {
+    width: 30%;
+}
+.skillcontainer .skillcontainer_inner .skill_progress .level_progress .progress_lists {
+    width: 70%;
+    padding-bottom: 20px;
+}
+.skillcontainer .skillcontainer_inner .skill_progress .level_progress.disabled {
+    opacity: .25;
+    pointer-events: none;
+}
+.skillcontainer .skillcontainer_inner .skill_progress .level_progress:last-of-type .progress_icon:after,
+.skillcontainer .skillcontainer_inner .skill_progress .level_progress:last-of-type .progress_icon:before {
+    display: none;
+}
+.skillcontainer .skillcontainer_inner .skill_progress .progress_icon {
+    position: relative;
+}
+.skillcontainer .skillcontainer_inner .skill_progress .progress_icon img {
+    position: relative;
+    max-width: 100%;
+    z-index: 5;
+}
+.skillcontainer .skillcontainer_inner .skill_progress .progress_icon:before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 48px;
+    height: calc(100% - 70px);
+    top: 50px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    background-color: #35006a;
+}
+.skillcontainer .skillcontainer_inner .skill_progress .progress_icon:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 20px 35px 0 35px;
+    border-color: #35006a transparent transparent transparent;
+}
+.skillcontainer .skillcontainer_inner .skill_progress .progress_lists .lists_block {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-bottom: 10px;
+}
+.skillcontainer .skillcontainer_inner .skill_progress .progress_lists .list {
+    width: calc(33.333% - 10px);
+    margin: 10px 5px 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    list-style: none;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    text-align: center;
+}
+.skillcontainer .skillcontainer_inner .skill_progress .progress_lists .list.active a {
+    border: 2px solid #FB61F8;
+    background-color: rgba(186,117,247,0.2);
+}
+
+.skillcontainer .skillcontainer_inner .skill_progress .progress_lists .list.completed a,
+.skillcontainer .skillcontainer_inner .skill_progress .progress_lists .list.completed small {
+    color: #535EE9;
+}
+.skillcontainer .skillcontainer_inner .skill_progress .progress_lists .list.completed a:before {
+    content: '';
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 15px 15px 0;
+    border-color: transparent #BBBBFB transparent transparent;
+}
+.skillcontainer .skillcontainer_inner .skill_progress .progress_lists i {
+    font-size: 13px;
+}
+.skillcontainer .skill_progress .progress_lists a {
+    position: relative;
+    display: block;
+    padding: 15px 0;
+    border: 2px solid transparent;
+    background-color: rgba(255,255,255,.2);
+    border-radius: 5px;
+    color: #fff;
+    text-align: center;
+    -webkit-transition: background-color .3s,color .3s;
+    -o-transition: background-color .3s,color .3s;
+    transition: background-color .3s,color .3s;
+}
+.skillcontainer .skillcontainer_inner .skill_progress .progress_lists a i {
+    font-size: 30px;
+}
+.skillcontainer .skillcontainer_inner .skill_progress .progress_lists small {
+    padding-top: 5px;
+    -webkit-transition: color .3s;
+    -o-transition: color .3s;
+    transition: color .3s;
+}
+
+/*Skills Section : part 03 : Details */
+.skillcontainer .skillcontainer_inner .skill_detail {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;   
+    width: 350px;
+
+}
+.skillcontainer .skillcontainer_inner .skill_detail .detail_top {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.skillcontainer .skillcontainer_inner .skill_detail .detail_top .logo i {
+    position: relative;
+    font-size: 100px;
+    color: rgba(255,255,255,0.2);
+    margin-left: 10px;
+}
+.skillcontainer .skillcontainer_inner .skill_detail .detail_top .name {
+    position: relative;
+    font-size: 30px;
+    line-height: 1;
+    font-weight: 700;
+    color: rgba(255,255,255,0.2);
+    text-align: center;
+}
+.skillcontainer .skillcontainer_inner .skill_detail .detail_bottom {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 10px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 5px;
+}
+.skillcontainer .skillcontainer_inner .skill_detail .detail_bottom .unit {
+    width: 80%;
+    text-align: center;
+    color: rgba(255,255,255,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.skillcontainer .skillcontainer_inner .skill_detail .detail_bottom .unit div {
+    position: relative;
+    width: 200px;
+    padding-bottom: 10px;
+}
+.skillcontainer .skillcontainer_inner .skill_detail .detail_bottom .unit .logo i {
+    font-size: 40px;
+}
+.skillcontainer .skillcontainer_inner .skill_detail .detail_bottom .unit .name {
+    font-weight: 700;
+}
+.skillcontainer .skillcontainer_inner .skill_detail .detail_bottom .unit li {
+    position: relative;
+    list-style: none;
+    color:  rgba(255,255,255,1);
+    border-radius: 5px;
+    margin: 5px 0;
+    padding: 5px 30px;
+    cursor: pointer;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+}
+.skillcontainer .skillcontainer_inner .skill_detail .detail_bottom .unit li.completed,
+.skillcontainer .skillcontainer_inner .skill_detail .detail_bottom .unit li:hover {
+    background-color: #FB61F8;
+}
+.skillcontainer .skillcontainer_inner .skill_detail .detail_bottom .unit.recommend {
+    width: 90%;
+    padding:  10px;
+    background-color: rgba(255,255,255,0.1);
+    margin-bottom: 10px;
+}
+.skillcontainer .skillcontainer_inner .skill_detail .detail_bottom .unit.optional {
+     width: 90%;
+    padding:  10px;
+    background-color: rgba(255,255,255,0.1);
+}
+
+/*Animations*/
+@-webkit-keyframes shipmove {
+    0% {
+        -webkit-transform: translate(0,0);
+        transform: translate(0,0);
+    }
+
+    100% {
+        -webkit-transform: translate(-10px,10px);
+        transform: translate(-10px,10px);
+    }
+}
+
+@keyframes shipmove {
+    0% {
+        -webkit-transform: translate(0,0);
+        transform: translate(0,0);
+    }
+
+    100% {
+        -webkit-transform: translate(-10px,10px);
+        transform: translate(-10px,10px);
+    }
+}
+
+/*RESPONSIVE for iphone view */
+@media (max-width: 375px)  {
+    .skillcontainer {
+        flex-direction: column;
+        height: 300vh;
+    }
+    .skillcontainer:before {
+        height: 300vh;
+        clip-path: circle(10% at 75% 60%);
+    }
+    .skillcontainer .skill_intro {
+        width:  90vw;
+        margin-left: 0;
+        height: 320px;
+    }
+    .skillcontainer .skillcontainer_inner {
+        margin-left: 0;
+        width:  90vw;
+        flex-direction: column;
+    }
+    .skillcontainer .skillcontainer_inner .skill_summary .summary_title {
+        margin: 0 auto 10px;
+    }
+    .skillcontainer .skillcontainer_inner .skill_summary .summary_level_desc {
+        margin: 0 auto 10px;
+    }
+    .skillcontainer .skillcontainer_inner .skill_summary .summary_level-rank {
+        flex-direction: row;
+        justify-content: center;
+    }
+    .skillcontainer .skillcontainer_inner .skill_summary .summary_level-rank .summary_level {
+        font-size: 1.2rem;
+    }
+    .skillcontainer .skillcontainer_inner .skill_summary .summary_img {
+        max-width: 200px;
+    }
+    .skillcontainer .skillcontainer_inner .skill_progress {
+        width: 100%;
+        margin-top: 10px;
+    }
+    .skillcontainer .skill_progress .progress_lists a {
+        padding: 10px 0;
+    }
+    .skillcontainer .skillcontainer_inner .skill_progress .level_progress .progress_icon {
+        width: 25%;
+        margin-right: 20px;
+    }
+    .skillcontainer .skillcontainer_inner .skill_progress .progress_icon:before {
+        width:  30px;
+        height: calc(100% - 80px);
+    }
+    .skillcontainer .skillcontainer_inner .skill_progress .progress_icon:after {
+        border-width: 20px 25px 10px 25px;
+    }
+    .skillcontainer .skillcontainer_inner .skill_detail {
+        width:  100%;
+        margin-top: 10px;
+        padding: 5px;
+        margin-bottom: 10px;
+    }
+    .skillcontainer .skillcontainer_inner .skill_detail .detail_top {
+        padding: 5px;
+    }
+    .skillcontainer .skillcontainer_inner .skill_detail .detail_top .logo i {
+        font-size: 30px;
+    }
+    .skillcontainer .skillcontainer_inner .skill_detail .detail_top .name {
+        font-size: 1.2rem;
+    }
+    .skillcontainer .skillcontainer_inner .skill_detail .detail_bottom .unit.recommend {
+        width: 100%;
+    }
+    .skillcontainer .skillcontainer_inner .skill_detail .detail_bottom .unit .logo i {
+        font-size: 20px;
+        padding: 0;
+    }
+    .skillcontainer .skillcontainer_inner .skill_detail .detail_bottom .unit .name {
+        font-size: 1rem;
+    }
+    .skillcontainer .skillcontainer_inner .skill_detail .detail_bottom .unit div {
+        width: 250px;
+    }
+    .skillcontainer .skillcontainer_inner .skill_detail .detail_bottom .unit li {
+        font-size: 0.9rem;
+    }
+    .skillcontainer .skillcontainer_inner .skill_detail .detail_bottom .unit.optional {
+        width: 100%;
+    }
+}
+@media (max-width: 480px) {
+    .skillcontainer {
+        padding: 10px;
+        height: 310vh;
+    }
+    .skillcontainer .skill_intro {
+        margin-left: 25px;
+        height: 300px;
+        width: 90vw;
+    }
+    .skillcontainer .skillcontainer_inner {
+        margin-left: 25px;
+        width: 90vw;
+        flex-direction: column;
+    }
+    .skillcontainer .skillcontainer_inner .skill_summary {
+        width:  410px;
+        align-items: center;
+    }
+    .skillcontainer .skillcontainer_inner .skill_summary .summary_level-rank {
+        width: 350px;
+    }
+    .skillcontainer .skillcontainer_inner .skill_progress,
+    .skillcontainer .skillcontainer_inner .skill_detail {
+        margin-top: 10px;
+        width:  100%;
+    }
+    .skillcontainer .skillcontainer_inner .skill_detail .detail_top {
+        padding:  10px;
+        margin-bottom: 10px;
+    }
+    .skillcontainer .skillcontainer_inner .skill_detail .detail_top .logo i {
+        font-size: 75px;
+    }
+    .skillcontainer .skillcontainer_inner .skill_detail .detail_top .name {
+        font-size: 1.2rem;
+    }
+    .skillcontainer .skillcontainer_inner .skill_detail .detail_bottom .unit .logo i {
+        font-size: 20px;
+    }
+    .skillcontainer .skillcontainer_inner .skill_detail .detail_bottom .unit div {
+        width: 300px;
+    }
+} 
+/*RESPONSIVE for tablet view */
+@media (max-width: 768px) {
+    .skillcontainer {
+        height: 160vh;
+    }
+    .skillcontainer .skill_intro {
+        width:  90vw;
+        height: 240px;
+        margin-left: 10px;
+    }
+    .skillcontainer .skillcontainer_inner {
+        margin-left: 10px;
+        width:  90vw;
+        flex-wrap: wrap;
+    }
+    .skillcontainer .skillcontainer_inner .skill_summary {
+        height: 350px;
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    .skillcontainer .skillcontainer_inner .skill_summary .summary_img {
+        align-self: initial;
+    }
+    .skillcontainer .skillcontainer_inner .skill_summary .summary_message {
+        position: absolute;
+        bottom: 100px;
+        left: 50%;
+        width: 50%;
+    }
+    .skillcontainer .skillcontainer_inner .skill_summary .summary_message .border {
+        display: none;
+    }
+    .skillcontainer .skillcontainer_inner .skill_progress {
+        width: 50%;
+    }
+    .skillcontainer .skillcontainer_inner .skill_detail {
+        width: 330px;
+    }
+}

@@ -1,4 +1,5 @@
 import * as THREE from 'three'
+
 document.addEventListener('DOMContentLoaded',function(event){
   var dataText = [ "Hello, I'm Quentin Feret, a creative developer"];
   
