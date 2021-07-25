@@ -6,6 +6,9 @@
   margin: 0;
   padding: 0;
   font-family: 'Nunito', sans-serif;
+  border: 0;
+  vertical-align: baseline;
+  box-sizing: border-box;
 }
 html {
   scroll-behavior:smooth
@@ -190,7 +193,7 @@ header .navigation li a {
   display: inline-block;
   padding: 20px 0 20px 20px;
   width: 100%;
-  height: 150px;
+  height: 175px;
   box-shadow: 20px 20px 50px rgba(0,0,0, 0.5);
   border-radius: 15px;
   border-top: 1px solid rgba(255,255,255,0.5);
@@ -377,12 +380,14 @@ header .navigation li a {
 }
 
 .content .button {
-  position: relative;
+  position: absolute;
+  top: 100%;
+  left: 18%;
   display: inline-flex;
   justify-content: center;
   align-items: center;
   width: 200px;
-  height: 30px;
+  height: 50px;
   margin-top: 10px;
   padding: 10px 10px;
   color: rgba(255,255,255,1);
@@ -509,7 +514,7 @@ header .navigation li a {
   left: 95%;
 }
 .scroll_down p {
-  font-size: 10px;
+  font-size: 9px;
   color: #fff;
   animation: moving 1s linear infinite;
 }
@@ -1996,7 +2001,7 @@ input[type=range]::-webkit-slider-thumb {
     z-index: 1;
     display: flex;
     flex-direction: column;
-    width:  78vw;
+    width:  79vw;
     height: 200px;
     background: rgba(255,255,255,0.1);
     padding: 20px;
@@ -2045,7 +2050,7 @@ input[type=range]::-webkit-slider-thumb {
 }
 .skillcontainer .skillcontainer_inner .skill_summary {
     position: relative;
-    width:  330px;
+    width:  280px;
     height: 75%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2084,7 +2089,7 @@ input[type=range]::-webkit-slider-thumb {
 .skillcontainer .skillcontainer_inner .skill_summary .summary_level-rank {
     position: relative;
     display: flex;
-    width: 300px;
+    width: 260px;
     justify-content: center;
     background-color: rgba(255,255,255,0.1);
     border-top: 1px solid rgba(255,255,255,0.2);
@@ -2139,7 +2144,7 @@ input[type=range]::-webkit-slider-thumb {
 /*Skills Section : part 02 : SkillTree*/
 .skillcontainer .skillcontainer_inner .skill_progress {
     position: relative;
-    width: 35%;
+    width: 40%;
 }
 .skillcontainer .skillcontainer_inner .skill_progress .level_progress {
     display: -webkit-box;
@@ -2403,24 +2408,30 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 /*RESPONSIVE for iphone view */
-@media (max-width: 375px)  {
+@media (max-width: 375px) {
     .skillcontainer {
-        flex-direction: column;
         height: 300vh;
+        width: 375px;      
     }
     .skillcontainer:before {
         height: 300vh;
         clip-path: circle(10% at 75% 60%);
     }
     .skillcontainer .skill_intro {
-        width:  90vw;
-        margin-left: 0;
+        width: 300px;
+        margin-left: -45px;
         height: 320px;
     }
+    .skillcontainer .skill_intro p {
+        width: 280px;
+    }
     .skillcontainer .skillcontainer_inner {
-        margin-left: 0;
-        width:  90vw;
+        margin-left: -40px;
+        width: 320px;
         flex-direction: column;
+    }
+    .skillcontainer .skillcontainer_inner .skill_summary {
+        width: 300px;
     }
     .skillcontainer .skillcontainer_inner .skill_summary .summary_title {
         margin: 0 auto 10px;
@@ -2431,6 +2442,7 @@ input[type=range]::-webkit-slider-thumb {
     .skillcontainer .skillcontainer_inner .skill_summary .summary_level-rank {
         flex-direction: row;
         justify-content: center;
+        width: 280px;
     }
     .skillcontainer .skillcontainer_inner .skill_summary .summary_level-rank .summary_level {
         font-size: 1.2rem;
@@ -2439,7 +2451,7 @@ input[type=range]::-webkit-slider-thumb {
         max-width: 200px;
     }
     .skillcontainer .skillcontainer_inner .skill_progress {
-        width: 100%;
+        width: 300px;
         margin-top: 10px;
     }
     .skillcontainer .skill_progress .progress_lists a {
@@ -2457,7 +2469,7 @@ input[type=range]::-webkit-slider-thumb {
         border-width: 20px 25px 10px 25px;
     }
     .skillcontainer .skillcontainer_inner .skill_detail {
-        width:  100%;
+        width: 310px;
         margin-top: 10px;
         padding: 5px;
         margin-bottom: 10px;
@@ -2491,7 +2503,7 @@ input[type=range]::-webkit-slider-thumb {
         width: 100%;
     }
 }
-@media (max-width: 480px) {
+@media (min-width: 376px) and (max-width: 480px) {
     .skillcontainer {
         padding: 10px;
         height: 310vh;
@@ -2536,41 +2548,5084 @@ input[type=range]::-webkit-slider-thumb {
     }
 } 
 /*RESPONSIVE for tablet view */
-@media (max-width: 768px) {
+@media (min-width: 481px) and (max-width: 768px) {
     .skillcontainer {
-        height: 160vh;
+        height: 300vh;
+    }
+    .skillcontainer:before {
+        height: 300vh;
+        clip-path: circle(10% at 95% 100%);
     }
     .skillcontainer .skill_intro {
-        width:  90vw;
-        height: 240px;
-        margin-left: 10px;
+        width: 60vw;
+        height: 260px;
+        margin-left: 150px;
     }
     .skillcontainer .skillcontainer_inner {
-        margin-left: 10px;
-        width:  90vw;
+        margin-left: 150px;
+        width: 63vw;
         flex-wrap: wrap;
     }
     .skillcontainer .skillcontainer_inner .skill_summary {
-        height: 350px;
+        height: 450px;
         width: 100%;
         margin-bottom: 5px;
+        align-items: center;
+    }
+    .skillcontainer .skillcontainer_inner .skill_summary .summary_title {
+        margin-top: 10px;
     }
     .skillcontainer .skillcontainer_inner .skill_summary .summary_img {
         align-self: initial;
     }
     .skillcontainer .skillcontainer_inner .skill_summary .summary_message {
         position: absolute;
-        bottom: 100px;
-        left: 50%;
-        width: 50%;
+        bottom: 60px;
+        width: 100%;
     }
     .skillcontainer .skillcontainer_inner .skill_summary .summary_message .border {
         display: none;
     }
-    .skillcontainer .skillcontainer_inner .skill_progress {
-        width: 50%;
-    }
+    .skillcontainer .skillcontainer_inner .skill_progress,
     .skillcontainer .skillcontainer_inner .skill_detail {
-        width: 330px;
+        width: 100%;
+        margin-top: 10px;
     }
+}
+ol, ul {
+  list-style: none;
+}
+.glasses .left:after,
+.glasses .right:after, .glasses .left:before,
+.glasses .right:before {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.picture__sun,
+.picture__moon, .illustrationImac__standBase, 
+.illustrationImac__stand, .button, .shirt, .collar, .neck, .arm__pharynx, .arm, .nose, .glasses, .eyes, .eyebrows__brow:after, .eyebrows, .face, .ears, .hair, .illustrationImac {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.illustrationSettings__gearCircle, 
+.illustrationSettings__gear, 
+.illustrationImac__panelButton, 
+.ear:after, 
+.illustration {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*Variables*/
+.__button_exit {
+  background-color: #F73C4F;
+}
+.__button_minimize {
+  background-color: #FFBA55;
+}
+.__button_screen {
+  background-color: #2B888F;
+}
+/*____________________________________________________________
+# Container
+____________________________________________________________*/
+.services{
+  width: 100vw;
+  height: 70vh;
+  background-color: #002188;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+/*____________________________________________________________
+## Home section
+____________________________________________________________*/
+.services .home {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+/*____________________________________________________________
+### title
+____________________________________________________________*/
+.services .home .title {
+  position: relative;
+  width: 400px;
+  height: 350px;
+  padding: 20px;
+  background-color: rgba(255,255,255,0.1);
+  border-radius: 5px;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  border-left: 1px solid rgba(255,255,255,0.2);
+}
+.services .home .title h2 {
+  position: relative;
+  font-family: 'Big Shoulders Display', sans-serif;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: rgba(255,255,255,1);
+}
+.services .home .title p {
+  position: relative;
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgba(255,255,255,1);
+  margin-top: 30px;
+}
+
+/*____________________________________________________________
+### Illustration
+____________________________________________________________*/
+.services .home .illustration {
+  position: relative;
+  width: 893px;
+  height: 600px;
+  overflow: hidden;
+}
+.services .home .illustration:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  border-radius: 3px;
+  background-color: #535EE9;
+}
+/*____________________________________________________________
+#### Illustration Blob Circle
+____________________________________________________________*/
+.services .home  .illustration .illustrationBlob {
+  position: absolute;
+  width: 893px;
+  height: 893px;
+}
+.services .home  .illustration .illustrationBlob .illustrationBlob__path {
+  position: absolute;
+  fill: #f7e0b5;
+}
+/*____________________________________________________________
+#### Illustration Bubbles Wrap
+____________________________________________________________*/
+.services .home .illustration .illustrationBubblesWrap {
+  width: 100%;
+  height: 100%;
+}
+.illustrationBubble {
+  position: absolute;
+  border-radius: 50%;
+  background-color: #7dcbd8;
+  animation: levitation 5s linear infinite;
+}
+.illustrationBubble:nth-child(1) {
+  top: 535px;
+  left: 310px;
+  width: 16px;
+  height: 16px;
+  background-color: #FB61F8;
+  animation-delay: 0s;
+}
+.illustrationBubble:nth-child(2) {
+  top: 370px;
+  left: 150px;
+  width: 12px;
+  height: 12px;
+  background-color: #BA75F7;
+  animation-delay: 0.3s;
+}
+.illustrationBubble:nth-child(3) {
+  top: 240px;
+  left: 50px;
+  width: 16px;
+  height: 16px;
+  background-color: #FB61F8;
+  animation-delay: 0.6s;
+}
+.illustrationBubble:nth-child(4) {
+  top: 180px;
+  left: 2px;
+  width: 10px;
+  height: 2px;
+  background-color: #7dcbd8;
+  animation-delay: 0s;
+}
+.illustrationBubble:nth-child(5) {
+  top: 140px;
+  left: 275px;
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  animation-delay: 1.2s;
+}
+.illustrationBubble:nth-child(6) {
+  top: 50px;
+  left: 420px;
+  width: 12px;
+  height: 12px;
+  background-color: #BA75F7;
+  animation-delay: 1.5s;
+}
+.illustrationBubble:nth-child(7) {
+  top: 10px;
+  left: 510px;
+  width: 10px;
+  height: 10px;
+  background-color: #535EE9;
+  animation-delay: 1.8s;
+}
+.illustrationBubble:nth-child(8) {
+  top: 30px;
+  left: 640px;
+  width: 6px;
+  height: 6px;
+  background-color: #BBBBFB;
+  animation-delay: 2.1s;
+}
+.illustrationBubble:nth-child(9) {
+  top: 75px;
+  left: 700px;
+  width: 10px;
+  height: 2px;
+  background-color: #78DBE2;
+  animation-delay: 2.4s;
+}
+.illustrationBubble:nth-child(10) {
+  top: 220px;
+  left: 780px;
+  width: 16px;
+  height: 16px;
+  background-color: #535EE9;
+  animation-delay: 2.7s;
+}
+.illustrationBubble:nth-child(11) {
+  top: 300px;
+  left: 730px;
+  width: 6px;
+  height: 6px;
+  background-color: #BBBBFB;
+  animation-delay: 3s;
+}
+.illustrationBubble:nth-child(12) {
+  top: 550px;
+  left: 630px;
+  width: 10px;
+  height: 2px;
+  background-color: #2a333c;
+  animation-delay: 3.3s;
+}
+.illustrationBubble:nth-child(4) {
+  animation: none;
+}
+.illustrationBubble:nth-child(4), .illustrationBubble:nth-child(9), .illustrationBubble:nth-child(12) {
+  border-radius: 1px;
+}
+.illustrationBubble:nth-child(4):before, .illustrationBubble:nth-child(9):before, .illustrationBubble:nth-child(12):before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: 4px;
+  width: 2px;
+  height: 10px;
+  border-radius: 1px;
+  background-color: #78DBE2;
+}
+.illustrationBubble:nth-child(5) {
+  border: 3px solid #FB61F8;
+}
+.illustrationBubble:nth-child(12):before {
+  background-color: #2a333c;
+}
+
+/*____________________________________________________________
+#### Illustration Dashed Frame
+____________________________________________________________*/
+.illustrationDashedFrame {
+  position: absolute;
+  border: 2px dashed #FB61F8;
+  border-radius: 5px;
+}
+
+.dashedFrame_type1 {
+  top: 292px;
+  left: 130px;
+  width: 116px;
+  height: 243px;
+}
+
+.dashedFrame_type2 {
+  top: 100px;
+  left: 210px;
+  width: 130px;
+  height: 130px;
+}
+
+.dashedFrame_type3 {
+  top: 210px;
+  left: 673px;
+  width: 170px;
+  height: 210px;
+}
+
+/*____________________________________________________________
+#### Illustration Circle Charts
+____________________________________________________________*/
+.illustrationCircleChart,
+.illustrationCircleChart_type1:before,
+.illustrationCircleChart_type2,
+.illustrationCircleChart_type2:before,
+.illustrationCircleChart_type2:after {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.illustrationCircleChart_type1 {
+  top: 250px;
+  left: 90px;
+  border-right: 30px solid transparent;
+  border-top: 30px solid #535EE9;
+  border-left: 30px solid #535EE9;
+  border-bottom: 30px solid #535EE9;
+  animation: rotateRays 7s linear infinite;
+}
+.illustrationCircleChart_type1:before {
+  content: "";
+  top: -30px;
+  left: -24px;
+  border-right: 30px solid #F73C4F;
+  border-top: 30px solid transparent;
+  border-left: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+}
+
+.illustrationCircleChart_type2 {
+  top: 280px;
+  right: 30px;
+  border-right: 35px solid transparent;
+  border-top: 35px solid #F73C4F;
+  border-left: 35px solid transparent;
+  border-bottom: 35px solid #F73C4F;
+  animation: rotateRays 7s linear infinite;
+}
+.illustrationCircleChart_type2:before {
+  content: "";
+  top: -35px;
+  left: -30px;
+  border-right: 35px solid #535EE9;
+  border-top: 35px solid transparent;
+  border-left: 35px solid transparent;
+  border-bottom: 35px solid transparent;
+}
+.illustrationCircleChart_type2:after {
+  content: "";
+  top: -35px;
+  right: -30px;
+  border-right: 35px solid transparent;
+  border-top: 35px solid transparent;
+  border-left: 35px solid #535EE9;
+  border-bottom: 35px solid transparent;
+}
+
+/*____________________________________________________________
+#### Illustration Stickers
+____________________________________________________________*/
+.illustrationSticker {
+  position: absolute;
+  padding: 10px 7px;
+  width: 60px;
+  height: 35px;
+  overflow: hidden;
+}
+.illustrationSticker:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-width: 0 16px 16px 0;
+  border-style: solid;
+  display: block;
+  width: 0;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3), -1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.illustrationSticker_type1 {
+  top: 125px;
+  left: 320px;
+  background-color: #F73C4F;
+}
+.illustrationSticker_type1:before {
+  border-color: #f7e0b5 #f7e0b5 #F7697D #F7697D;
+}
+
+.illustrationSticker_type2 {
+  top: 75px;
+  left: 300px;
+  background-color: #535EE9;
+}
+.illustrationSticker_type2:before {
+  border-color: #f7e0b5 #f7e0b5 #BBBBFB #BBBBFB;
+}
+
+.illustrationSticker_type1 {
+  transform: rotate(10deg);
+}
+
+.illustrationSticker__lineWrap {
+  width: 28px;
+  height: 15px;
+  list-style: none;
+}
+
+.illustrationSticker__line {
+  position: relative;
+  margin-bottom: 3px;
+  width: 100%;
+  height: 3px;
+  overflow: hidden;
+}
+.illustrationSticker__line:nth-child(2):after {
+  animation-delay: 0.1s;
+}
+.illustrationSticker__line:nth-child(3):after {
+  animation-delay: 0.2s;
+}
+.illustrationSticker__line:last-child {
+  margin-bottom: 0;
+  width: 70%;
+}
+.illustrationSticker__line:after {
+  content: "";
+  position: absolute;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  animation: slide 3.5s ease infinite;
+}
+
+/*____________________________________________________________
+#### Illustration Site Layout
+____________________________________________________________*/
+.illustrationSiteLayout {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 90px;
+  height: 85px;
+  border: 2px solid #78DBE2;
+  border-radius: 5px;
+  animation: levitation 5s linear infinite 3.2s;
+}
+.illustrationSiteLayout:before, .illustrationSiteLayout:after {
+  content: "";
+  position: absolute;
+  border: solid #78DBE2;
+}
+.illustrationSiteLayout:before {
+  width: 100%;
+  height: 20px;
+  border-width: 0 0 2px 0;
+}
+.illustrationSiteLayout:after {
+  top: 20px;
+  width: 20px;
+  height: calc(100% - 20px);
+  border-width: 0 2px 0 0;
+}
+
+.illustrationSiteLayout__codeWrap {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 3px 6px 3px 8px;
+  width: calc(100% - 20px);
+  height: calc(100% - 22px);
+}
+
+.illustrationSiteLayout__scrollBox {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.illustrationSiteLayout__codeList {
+  position: absolute;
+  width: 100%;
+  list-style: none;
+  animation: scrollCode 0.9s linear infinite;
+}
+
+.illustrationSiteLayout__codeItem {
+  position: relative;
+  margin-bottom: 2px;
+  width: 100%;
+  height: 18px;
+}
+
+.illustrationSiteLayout__codeLine {
+  position: absolute;
+  height: 2px;
+  background-color: #78DBE2;
+  overflow: hidden;
+}
+.illustrationSiteLayout__codeLine:nth-child(1) {
+  top: 0px;
+  left: 0;
+  width: 90%;
+}
+.illustrationSiteLayout__codeLine:nth-child(2) {
+  top: 4px;
+  left: 0;
+  width: 70%;
+}
+.illustrationSiteLayout__codeLine:nth-child(3) {
+  top: 8px;
+  left: 0;
+  width: 50%;
+}
+.illustrationSiteLayout__codeLine:nth-child(4) {
+  top: 12px;
+  left: 0;
+  width: 20%;
+}
+.illustrationSiteLayout__codeLine:nth-child(5) {
+  top: 12px;
+  left: 30%;
+  width: 60%;
+}
+.illustrationSiteLayout__codeLine:nth-child(6) {
+  top: 16px;
+  left: 0;
+  width: 50%;
+}
+.illustrationSiteLayout__codeLine:nth-child(7) {
+  top: 16px;
+  left: 60%;
+  width: 15%;
+}
+
+/*____________________________________________________________
+#### Illustration Dialog
+____________________________________________________________*/
+.illustrationDialog {
+  position: absolute;
+  top: 90px;
+  right: 170px;
+  padding: 8px 14px;
+  width: 78px;
+  height: 45px;
+  background-color: #535EE9;
+  animation: levitation 5s linear infinite 0.8s;
+}
+.illustrationDialog:before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  bottom: -10px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid #535EE9;
+  border-right: 10px solid transparent;
+}
+
+.illustrationDialog__line {
+  position: relative;
+  margin-bottom: 3px;
+  width: 100%;
+  height: 3px;
+  overflow: hidden;
+}
+.illustrationDialog__line:nth-child(2) {
+  width: 70%;
+}
+.illustrationDialog__line:nth-child(4) {
+  width: 60%;
+}
+.illustrationDialog__line:nth-child(5) {
+  width: 90%;
+}
+.illustrationDialog__line:last-child {
+  margin-bottom: 0;
+}
+.illustrationDialog__line:after {
+  content: "";
+  position: absolute;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  animation: slide 3.5s ease infinite;
+}
+.illustrationDialog__line:nth-child(2):after {
+  animation-delay: 0.1s;
+}
+.illustrationDialog__line:nth-child(3):after {
+  animation-delay: 0.2s;
+}
+.illustrationDialog__line:nth-child(4):after {
+  animation-delay: 0.3s;
+}
+.illustrationDialog__line:nth-child(5):after {
+  animation-delay: 0.35s;
+}
+
+/*____________________________________________________________
+#### Illustration Folder
+____________________________________________________________*/
+.illustrationFolder {
+  position: absolute;
+  top: 350px;
+  left: 50px;
+  width: 47px;
+  height: 31px;
+  border-radius: 1px 0 1px 1px;
+  background-color: #002188;
+  animation: levitation 5s linear infinite 1.4s;
+}
+.illustrationFolder:before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  right: 0;
+  width: 10px;
+  height: 4px;
+  border-radius: 1px 1px 0 0;
+  background-color: #002188;
+}
+.illustrationFolder:after {
+  content: "";
+  position: absolute;
+  left: -5px;
+  bottom: 0;
+  width: 47px;
+  height: 31px;
+  border-radius: 1px;
+  background-color: #535EE9;
+  animation: openFolder 3.5s ease infinite;
+}
+
+.illustrationFolder__file {
+  position: absolute;
+  left: 4px;
+  bottom: 0;
+  padding: 4px 2px;
+  width: 29px;
+  height: 35px;
+  border-radius: 1px;
+  background-color: #fff;
+  animation: openFile 3.5s ease infinite;
+}
+
+.illustrationFolder__line {
+  position: relative;
+  margin-bottom: 2px;
+  width: 100%;
+  height: 1px;
+  overflow: hidden;
+}
+.illustrationFolder__line:after {
+  content: "";
+  position: absolute;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #535EE9;
+  animation: slide 3.5s ease infinite;
+}
+.illustrationFolder__line:nth-child(2):after {
+  animation-delay: 0.1s;
+}
+.illustrationFolder__line:nth-child(3):after {
+  animation-delay: 0.2s;
+}
+.illustrationFolder__line:nth-child(4):after {
+  animation-delay: 0.3s;
+}
+.illustrationFolder__line:nth-child(5):after {
+  animation-delay: 0.4s;
+}
+
+/*____________________________________________________________
+#### Illustration Books
+____________________________________________________________*/
+.illustrationBooks {
+  position: absolute;
+  left: 70px;
+  bottom: 0;
+  width: 164px;
+  height: 86px;
+}
+
+.illustrationBooks__book {
+  position: absolute;
+}
+.illustrationBooks__book:nth-child(1) {
+  left: 5px;
+  width: 132px;
+  height: 28px;
+  border: solid #535EE9;
+  border-width: 4px 0 4px 4px;
+  border-radius: 20px 0 0 20px;
+  background: repeating-linear-gradient(0deg, #fff, #fff 4px, #e6e6e6 4px, #e6e6e6 5px);
+}
+.illustrationBooks__book:nth-child(2) {
+  top: 28px;
+  right: 0;
+  width: 146px;
+  height: 31px;
+  border: solid #F73C4F;
+  border-width: 4px 4px 4px 0;
+  border-radius: 0 20px 20px 0;
+  background: repeating-linear-gradient(0deg, #fff, #fff 4px, #e6e6e6 4px, #e6e6e6 5px);
+}
+.illustrationBooks__book:nth-child(3) {
+  bottom: 0;
+  width: 132px;
+  height: 27px;
+  background-color: #6F362D;
+}
+
+.illustrationBooks__binding {
+  position: absolute;
+  width: 6px;
+  height: 100%;
+  background-color: #F4AF64;
+}
+.illustrationBooks__binding:nth-child(1) {
+  left: 10px;
+}
+.illustrationBooks__binding:nth-child(2) {
+  left: 20px;
+  background-color: #EE6648;
+}
+.illustrationBooks__binding:nth-child(3) {
+  right: 20px;
+  background-color: #EE6648;
+}
+.illustrationBooks__binding:nth-child(4) {
+  right: 10px;
+}
+
+/*____________________________________________________________
+#### Illustration Analytics
+____________________________________________________________*/
+.illustrationAnalytics {
+  position: absolute;
+  bottom: 25px;
+  right: 10px;
+  width: 215px;
+  height: 180px;
+  border-radius: 2px;
+  background-color: #BBBBFB;
+  overflow: hidden;
+  animation: levitation 5s linear infinite;
+}
+
+.illustrationAnalyticsPanel {
+  position: relative;
+  width: 100%;
+  height: 20px;
+  background-color: #2a333c;
+}
+
+.illustrationAnalyticsPanel__buttonsWrap {
+  position: absolute;
+  top: 6px;
+  left: 10px;
+  height: 8px;
+}
+
+.illustrationAnalyticsPanel__button {
+  float: left;
+  margin-right: 4px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+/*____________________________________________________________
+##### Illustration Analytics Page
+____________________________________________________________*/
+.illustrationAnalyticsPage {
+  padding: 8px;
+  width: 100%;
+  height: calc(100% - 20px);
+}
+
+.illustrationAnalyticsPage__container {
+  width: 100%;
+  height: 100%;
+}
+
+/*____________________________________________________________
+###### Illustration Analytics Diagram
+____________________________________________________________*/
+.illustrationAnalyticsPage__diagramWrap {
+  float: left;
+  padding-top: 20%;
+  margin-right: 10px;
+  width: 90px;
+  height: 100%;
+  list-style: none;
+}
+
+.illustrationAnalyticsPage__diagram {
+  position: relative;
+  float: left;
+  margin-right: 10px;
+  width: 15px;
+  height: 100%;
+  border-radius: 1px;
+  overflow: hidden;
+}
+.illustrationAnalyticsPage__diagram:last-child {
+  margin-right: 0;
+}
+.illustrationAnalyticsPage__diagram:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 10%;
+  background-color: #535EE9;
+  animation: lineDiagram 2.8s ease infinite;
+}
+.illustrationAnalyticsPage__diagram:nth-child(2):after {
+  animation-delay: 0.6s;
+}
+.illustrationAnalyticsPage__diagram:nth-child(3):after {
+  animation-delay: 0.3s;
+}
+.illustrationAnalyticsPage__diagram:nth-child(4):after {
+  animation-delay: 0.9s;
+}
+
+/*____________________________________________________________
+###### Illustration Analytics Banner
+____________________________________________________________*/
+.illustrationAnalyticsPage__banner {
+  float: left;
+  width: calc(100% - 100px);
+  height: 100%;
+}
+
+/*____________________________________________________________
+####### Illustration Analytics Description
+____________________________________________________________*/
+.illustrationAnalyticsPage__lineWrap {
+  margin-bottom: 17px;
+  width: 100%;
+  height: 87px;
+  list-style: none;
+}
+
+.illustrationAnalyticsPage__line {
+  position: relative;
+  margin-bottom: 5px;
+  width: 100%;
+  height: 3px;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.illustrationAnalyticsPage__line:first-child {
+  width: 60%;
+  height: 6px;
+  margin-bottom: 8px;
+}
+.illustrationAnalyticsPage__line:nth-child(5), .illustrationAnalyticsPage__line:nth-child(6), .illustrationAnalyticsPage__line:nth-child(7) {
+  width: 70%;
+}
+.illustrationAnalyticsPage__line:last-child {
+  height: 27px;
+  margin-bottom: 0;
+  border-radius: 1px;
+  background-color: #BA75F7;
+}
+.illustrationAnalyticsPage__line:after {
+  content: "";
+  position: absolute;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #535EE9;
+  animation: slide 3.5s ease infinite;
+}
+.illustrationAnalyticsPage__line:nth-child(1):after {
+  animation-delay: 0.1s;
+}
+.illustrationAnalyticsPage__line:nth-child(2):after {
+  animation-delay: 0.2s;
+}
+.illustrationAnalyticsPage__line:nth-child(3):after {
+  animation-delay: 0.3s;
+}
+.illustrationAnalyticsPage__line:nth-child(4):after {
+  animation-delay: 0.35s;
+}
+.illustrationAnalyticsPage__line:nth-child(5):after {
+  animation-delay: 0.4s;
+}
+.illustrationAnalyticsPage__line:nth-child(6):after {
+  animation-delay: 0.45s;
+}
+.illustrationAnalyticsPage__line:nth-child(7):after {
+  animation-delay: 0.5s;
+}
+.illustrationAnalyticsPage__line:last-child:after {
+  animation: none;
+}
+
+/*____________________________________________________________
+####### Illustration Analytics Product List
+____________________________________________________________*/
+.illustrationAnalyticsPage__productList {
+  width: 100%;
+  height: calc(100% - 104px);
+  list-style: none;
+}
+
+.illustrationAnalyticsPage__productItem {
+  float: left;
+  margin-bottom: 10px;
+  margin-right: 5px;
+  width: 47px;
+  height: 15px;
+}
+.illustrationAnalyticsPage__productItem:nth-child(2n) {
+  margin-right: 0;
+}
+.illustrationAnalyticsPage__productItem:nth-child(3) .illustrationAnalyticsPage__productImg, .illustrationAnalyticsPage__productItem:nth-child(4) .illustrationAnalyticsPage__productImg {
+  background-color: #535EE9;
+}
+
+.illustrationAnalyticsPage__productImg {
+  float: left;
+  margin-right: 5px;
+  width: 15px;
+  height: 15px;
+  border-radius: 1px;
+  background-color: #BA75F7;
+}
+
+.illustrationAnalyticsPage__productLineWrap {
+  float: left;
+  width: calc(100% - 20px);
+  height: 15px;
+  list-style: none;
+}
+
+.illustrationAnalyticsPage__productLine {
+  position: relative;
+  margin-bottom: 3px;
+  width: 100%;
+  height: 3px;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.illustrationAnalyticsPage__productLine:nth-child(2), .illustrationAnalyticsPage__productLine:last-child {
+  width: 70%;
+}
+.illustrationAnalyticsPage__productLine:last-child {
+  margin-bottom: 0;
+}
+.illustrationAnalyticsPage__productLine:after {
+  content: "";
+  position: absolute;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #535EE9;
+  animation: slide 3.5s ease infinite;
+}
+.illustrationAnalyticsPage__productLine:nth-child(1):after {
+  animation-delay: 0.1s;
+}
+.illustrationAnalyticsPage__productLine:nth-child(2):after {
+  animation-delay: 0.2s;
+}
+.illustrationAnalyticsPage__productLine:nth-child(3):after {
+  animation-delay: 0.3s;
+}
+
+/*____________________________________________________________
+#### Illustration Imac
+____________________________________________________________*/
+.illustrationImac {
+  bottom: 147px;
+  width: 482px;
+  height: 266px;
+}
+
+/*____________________________________________________________
+##### Illustration Imac Display
+____________________________________________________________*/
+.illustrationImac__display {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 9px solid #2a333c;
+  border-radius: 10px 10px 0 0;
+  background: #CCCCFF;
+}
+
+/*____________________________________________________________
+###### Illustration Imac Editor
+____________________________________________________________*/
+.illustrationImacEditor {
+  position: absolute;
+  bottom: 9px;
+  left: 30px;
+  width: 180px;
+  height: 116px;
+  background-color: #fff;
+}
+
+.illustrationImacEditorPanel {
+  width: 100%;
+  height: 10px;
+  background-color: #2a333c;
+}
+
+/*____________________________________________________________
+####### Illustration Imac Editor Code
+____________________________________________________________*/
+.illustrationImacEditorCodeWrap {
+  position: relative;
+  padding: 6px;
+  width: 100%;
+  height: calc(100% - 10px);
+  background-color: #4c5259;
+}
+
+.illustrationImacEditorCodeWrap__scrollBox {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.illustrationImacEditorCodeWrap__codeList {
+  position: absolute;
+  width: 50%;
+  list-style: none;
+  animation: scrollCode 0.9s linear infinite;
+}
+.illustrationImacEditorCodeWrap__codeList:first-child {
+  border-right: 1px solid #626a73;
+}
+.illustrationImacEditorCodeWrap__codeList:first-child .illustrationImacEditorCodeWrap__codeLine:nth-child(1) {
+  top: 0px;
+  left: 0px;
+  width: 20px;
+  background-color: #ee6648;
+}
+.illustrationImacEditorCodeWrap__codeList:first-child .illustrationImacEditorCodeWrap__codeLine:nth-child(2) {
+  top: 0px;
+  left: 24px;
+  width: 45px;
+  background-color: #ee6648;
+}
+.illustrationImacEditorCodeWrap__codeList:first-child .illustrationImacEditorCodeWrap__codeLine:nth-child(3) {
+  top: 4px;
+  left: 10px;
+  width: 21px;
+  background-color: #fff;
+}
+.illustrationImacEditorCodeWrap__codeList:first-child .illustrationImacEditorCodeWrap__codeLine:nth-child(4) {
+  top: 4px;
+  left: 35px;
+  width: 25px;
+  background-color: #fff;
+}
+.illustrationImacEditorCodeWrap__codeList:first-child .illustrationImacEditorCodeWrap__codeLine:nth-child(5) {
+  top: 8px;
+  left: 0px;
+  width: 22px;
+  background-color: #78dbe2;
+}
+.illustrationImacEditorCodeWrap__codeList:first-child .illustrationImacEditorCodeWrap__codeLine:nth-child(6) {
+  top: 8px;
+  left: 26px;
+  width: 14px;
+  background-color: #BBBBFB;
+}
+.illustrationImacEditorCodeWrap__codeList:first-child .illustrationImacEditorCodeWrap__codeLine:nth-child(7) {
+  top: 12px;
+  right: 40px;
+  width: 22px;
+  background-color: #ADFF2F;
+}
+.illustrationImacEditorCodeWrap__codeList:first-child .illustrationImacEditorCodeWrap__codeLine:nth-child(8) {
+  top: 12px;
+  right: 16px;
+  width: 20px;
+  background-color: #ADFF2F;
+}
+.illustrationImacEditorCodeWrap__codeList:first-child .illustrationImacEditorCodeWrap__codeLine:nth-child(9) {
+  top: 16px;
+  right: 18px;
+  width: 30px;
+  background-color: #fff;
+}
+.illustrationImacEditorCodeWrap__codeList:first-child .illustrationImacEditorCodeWrap__codeLine:nth-child(10) {
+  top: 16px;
+  right: 6px;
+  width: 8px;
+  background-color: #fff;
+}
+.illustrationImacEditorCodeWrap__codeList:last-child {
+  right: 0;
+  animation-duration: 1.3s;
+}
+.illustrationImacEditorCodeWrap__codeList:last-child .illustrationImacEditorCodeWrap__codeLine:nth-child(1) {
+  top: 0px;
+  left: 6px;
+  width: 36px;
+  background-color: #fff;
+}
+.illustrationImacEditorCodeWrap__codeList:last-child .illustrationImacEditorCodeWrap__codeLine:nth-child(2) {
+  top: 0px;
+  left: 46px;
+  width: 20px;
+  background-color: #F73C4F;
+}
+.illustrationImacEditorCodeWrap__codeList:last-child .illustrationImacEditorCodeWrap__codeLine:nth-child(3) {
+  top: 4px;
+  left: 12px;
+  width: 30px;
+  background-color: #2B888F;
+}
+.illustrationImacEditorCodeWrap__codeList:last-child .illustrationImacEditorCodeWrap__codeLine:nth-child(4) {
+  top: 4px;
+  left: 46px;
+  width: 18px;
+  background-color: #F73C4F;
+}
+.illustrationImacEditorCodeWrap__codeList:last-child .illustrationImacEditorCodeWrap__codeLine:nth-child(5) {
+  top: 8px;
+  left: 18px;
+  width: 24px;
+  background-color: transparent;
+}
+.illustrationImacEditorCodeWrap__codeList:last-child .illustrationImacEditorCodeWrap__codeLine:nth-child(6) {
+  top: 8px;
+  left: 46px;
+  width: 16px;
+  background-color: #ff4765;
+}
+.illustrationImacEditorCodeWrap__codeList:last-child .illustrationImacEditorCodeWrap__codeLine:nth-child(7) {
+  top: 12px;
+  right: 35px;
+  width: 15px;
+  background-color: #feb021;
+}
+.illustrationImacEditorCodeWrap__codeList:last-child .illustrationImacEditorCodeWrap__codeLine:nth-child(8) {
+  top: 12px;
+  right: 6px;
+  width: 25px;
+  background-color: #feb021;
+}
+.illustrationImacEditorCodeWrap__codeList:last-child .illustrationImacEditorCodeWrap__codeLine:nth-child(9) {
+  top: 16px;
+  right: 10px;
+  width: 30px;
+  background-color: #BBBBFB;
+}
+.illustrationImacEditorCodeWrap__codeList:last-child .illustrationImacEditorCodeWrap__codeLine:nth-child(10) {
+  top: 16px;
+  right: 0px;
+  width: 6px;
+  background-color: #BBBBFB;
+}
+
+.illustrationImacEditorCodeWrap__codeItem {
+  position: relative;
+  margin-bottom: 2px;
+  width: 100%;
+  height: 18px;
+}
+
+.illustrationImacEditorCodeWrap__codeLine {
+  position: absolute;
+  height: 2px;
+  background-color: #ee6648;
+  overflow: hidden;
+}
+
+/*____________________________________________________________
+###### Illustration Imac Browser
+____________________________________________________________*/
+.illustrationImacBrowser {
+  position: absolute;
+  top: 12px;
+  left: 16px;
+  width: 180px;
+  height: 116px;
+  background-color: #fff;
+}
+
+/*____________________________________________________________
+####### Illustration Imac Browser Panel
+____________________________________________________________*/
+.illustrationImacBrowserPanel {
+  width: 100%;
+  height: 10px;
+  background-color: #2a333c;
+}
+
+.illustrationImacBrowserPanel__buttonsWrap {
+  position: absolute;
+  top: 3px;
+  left: 6px;
+  height: 4px;
+}
+
+.illustrationImacBrowserPanel__button {
+  float: left;
+  margin-right: 2px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+}
+
+/*____________________________________________________________
+####### Illustration Imac Browser Page
+____________________________________________________________*/
+.illustrationImacBrowserPage {
+  width: 100%;
+  height: calc(100% - 10px);
+}
+
+.illustrationImacBrowserPage__container {
+  width: 100%;
+  height: 100%;
+}
+
+/*____________________________________________________________
+######## Illustration Imac Browser Header
+____________________________________________________________*/
+.illustrationImacBrowserPage__header {
+  position: relative;
+  padding-top: 9px;
+  width: 100%;
+  height: 27px;
+}
+
+.illustrationImacBrowserPage__nav {
+  position: relative;
+  padding-top: 4px;
+  margin: 0 auto;
+  width: 100px;
+  height: 10px;
+  background-color: #C0C0C0;
+}
+
+.illustrationImacBrowserPage__navItem {
+  position: relative;
+  float: left;
+  margin-left: 10px;
+  width: 15px;
+  height: 2px;
+  overflow: hidden;
+}
+.illustrationImacBrowserPage__navItem:first-child {
+  margin-left: calc(10px / 2);
+}
+.illustrationImacBrowserPage__navItem:after {
+  content: "";
+  position: absolute;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #2a333c;
+  animation: slide 3.5s ease infinite;
+}
+.illustrationImacBrowserPage__navItem:nth-child(2):after {
+  animation-delay: 0.1s;
+}
+.illustrationImacBrowserPage__navItem:nth-child(3):after {
+  animation-delay: 0.2s;
+}
+.illustrationImacBrowserPage__navItem:nth-child(4):after {
+  animation-delay: 0.3s;
+}
+
+/*____________________________________________________________
+######## Illustration Imac Browser Main
+____________________________________________________________*/
+.illustrationImacBrowserPage__main {
+  position: relative;
+  padding: 8px;
+  width: 100%;
+  height: 37px;
+  background-color: #BA75F7;
+}
+
+.illustrationImacBrowserPage__banner {
+  width: 100%;
+  height: 100%;
+}
+
+.illustrationImacBrowserPage__img {
+  position: relative;
+  float: left;
+  margin-right: 10px;
+  width: 44px;
+  height: 22px;
+  overflow: hidden;
+}
+.illustrationImacBrowserPage__img:after {
+  content: "";
+  position: absolute;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  animation: slide 3.5s ease infinite;
+}
+
+.illustrationImacBrowserPage__lineWrap {
+  float: left;
+  width: calc(100% - 54px);
+  height: 20px;
+}
+
+.illustrationImacBrowserPage__line {
+  position: relative;
+  margin-bottom: 3px;
+  width: 100%;
+  height: 2px;
+  overflow: hidden;
+}
+.illustrationImacBrowserPage__line:last-child {
+  width: calc(100% / 2);
+}
+.illustrationImacBrowserPage__line:after {
+  content: "";
+  position: absolute;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #2a333c;
+  animation: slide 3.5s ease infinite;
+}
+.illustrationImacBrowserPage__line:nth-child(1):after {
+  animation-delay: 0.1s;
+}
+.illustrationImacBrowserPage__line:nth-child(2):after {
+  animation-delay: 0.2s;
+}
+.illustrationImacBrowserPage__line:nth-child(3):after {
+  animation-delay: 0.3s;
+}
+.illustrationImacBrowserPage__line:nth-child(4):after {
+  animation-delay: 0.35s;
+}
+
+/*____________________________________________________________
+######## Illustration Imac Browser Footer
+____________________________________________________________*/
+.illustrationImacBrowserPage__footer {
+  position: relative;
+  padding: 7px 8px;
+  width: 100%;
+  height: 42px;
+}
+
+.illustrationImacBrowserPage__productList {
+  list-style: none;
+  width: 100%;
+  height: 100%;
+}
+
+.illustrationImacBrowserPage__productItem {
+  position: relative;
+  float: left;
+  margin-right: 16px;
+  width: 44px;
+  height: 100%;
+}
+.illustrationImacBrowserPage__productItem:last-child {
+  margin-right: 0;
+}
+
+.illustrationImacBrowserPage__productImg {
+  position: relative;
+  margin-bottom: 2px;
+  width: 100%;
+  height: 22px;
+  overflow: hidden;
+}
+.illustrationImacBrowserPage__productImg:after {
+  content: "";
+  position: absolute;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #C0C0C0;
+  animation: slide 3.5s ease infinite;
+}
+
+.illustrationImacBrowserPage__productLineWrap {
+  width: 100%;
+  height: 6px;
+}
+
+.illustrationImacBrowserPage__productLine {
+  position: relative;
+  float: left;
+  margin-bottom: 2px;
+  width: 100%;
+  height: 2px;
+  overflow: hidden;
+}
+.illustrationImacBrowserPage__productLine:after {
+  content: "";
+  position: absolute;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #2a333c;
+  animation: slide 3.5s ease infinite;
+}
+.illustrationImacBrowserPage__productLine:nth-child(1):after {
+  animation-delay: 0.1s;
+}
+.illustrationImacBrowserPage__productLine:nth-child(2):after {
+  animation-delay: 0.2s;
+}
+
+/*____________________________________________________________
+###### Avatar
+____________________________________________________________*/
+.avatarWrap {
+  position: absolute;
+  bottom: 0;
+  right: 30px;
+  width: 250px;
+  height: 356px;
+}
+
+/*____________________________________________________________
+####### Head
+____________________________________________________________*/
+.headWrap {
+  position: relative;
+  width: 100%;
+  height: 249px;
+}
+
+/*____________________________________________________________
+######## Hair
+____________________________________________________________*/
+.hair {
+  width: 140px;
+  height: 44px;
+}
+
+.hair__leftSide {
+  position: absolute;
+  width: 140px;
+  height: 80px;
+  border-radius: 80px 80px 00px 0;
+  background-color: #4E211E;
+  z-index: 9;
+}
+
+.hair__mat {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: #2B1112;
+  left: 44px;
+  top: -24px;
+  border-radius: 50%;
+}
+
+/*____________________________________________________________
+######## Ears
+____________________________________________________________*/
+.ears {
+  top: 115px;
+  width: 186px;
+  height: 40px;
+}
+
+.ear {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #FF8F6A;
+}
+.ear:nth-child(2) {
+  right: 0;
+}
+.ear:after {
+  content: "";
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #F95E2E;
+}
+
+/*____________________________________________________________
+######## Face
+____________________________________________________________*/
+.face {
+  top: 44px;
+  width: 140px;
+  height: 181px;
+  border-radius: 60px 60px 100px 100px;
+  background-color: #FF8F6A;
+  z-index: 2;
+}
+
+/*____________________________________________________________
+######### Top Face
+____________________________________________________________*/
+.eyebrows {
+  top: 29px;
+  width: 90px;
+  height: 10px;
+}
+
+.eyebrows__brow {
+  overflow: hidden;
+  position: absolute;
+  width: 30px;
+  height: 10px;
+  border-radius: 10px;
+  background-color: #4E211E;
+  z-index: 9;
+}
+.eyebrows__brow:nth-child(2) {
+  right: 0;
+}
+.eyebrows__brow:before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background-color: #4E211E;
+}
+.eyebrows__brow:after {
+  content: "";
+  top: 2px;
+  width: 12px;
+  height: 2px;
+  border-radius: 15px;
+  background-color: #fff;
+  opacity: 0.2;
+}
+
+.eyebrows__shadow {
+  position: absolute;
+  top: 4px;
+  width: 100%;
+  height: 100%;
+}
+.eyebrows__shadow:before, .eyebrows__shadow:after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 10px;
+  border-radius: 10px;
+  background-color: #E03C16;
+}
+.eyebrows__shadow:after {
+  right: 0;
+}
+
+/*____________________________________________________________
+######### Middle Face
+____________________________________________________________*/
+.eyes {
+  bottom: 100px;
+  width: 70px;
+  height: 22px;
+}
+.eyes:before, .eyes:after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 22px;
+  border-radius: 6px;
+  background-color: #000;
+  animation: blink 3s ease-in-out infinite;
+}
+.eyes:after {
+  right: 0;
+}
+
+.glasses {
+  top: 70px;
+  width: 4px;
+  height: 4px;
+  background-color: #4E211E;
+  z-index: 1;
+}
+.glasses .left,
+.glasses .right {
+  position: absolute;
+  width: 56px;
+  height: 56px;
+  background-color: transparent;
+  border-radius: 100%;
+  border: 5px solid #4E211E;
+  left: -56px;
+  top: -26px;
+  z-index: 2;
+}
+.glasses .left:before,
+.glasses .right:before {
+  content: "";
+  width: 20px;
+  height: 4px;
+  border-radius: 5px;
+  background-color: #4E211E;
+}
+.glasses .left:after,
+.glasses .right:after {
+  content: "";
+  width: 8px;
+  height: 2px;
+  border-radius: 15px;
+  background-color: #fff;
+  opacity: 0.4;
+}
+.glasses .left:before {
+  left: -20px;
+}
+.glasses .left:after {
+  left: -17px;
+}
+.glasses .right {
+  left: 4px;
+}
+.glasses .right:before {
+  right: -20px;
+}
+.glasses .right:after {
+  right: -17px;
+}
+
+.lens {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #a25454;
+  mix-blend-mode: overlay;
+  opacity: 0.5;
+}
+.lens .shine:before, .lens .shine:after {
+  content: "";
+  position: absolute;
+  top: -21px;
+  left: 5px;
+  width: 20px;
+  height: 100px;
+  background-color: #F9C7D4;
+  mix-blend-mode: overlay;
+  transform: rotate(30deg);
+  opacity: 1;
+}
+.lens .shine:after {
+  width: 5px;
+  left: 30px;
+}
+
+/*____________________________________________________________
+######### Bottom Face
+____________________________________________________________*/
+.nose {
+  bottom: 70px;
+  width: 30px;
+  height: 8px;
+  z-index:  1;
+}
+.nose:before, .nose:after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 5px;
+  border-radius: 0 0 50% 50%;
+  background-color: #F95E2E;
+}
+.nose:after {
+  right: 0;
+}
+
+.arm {
+  overflow: hidden;
+  bottom: 28px;
+  width: calc(81px - 10px);
+  height: calc(30px - 0px);
+  border-radius: 0 0 50% 50%/0 0 100% 100%;
+  background-color: #7a1635;
+  z-index: 1;
+}
+
+.arm__pharynx {
+  top: 6px;
+  width: calc(57px - 10px);
+  height: calc(11px - 0px);
+  border-radius: 20px;
+  background-color: #480a16;
+}
+
+.arm__tooth {
+  position: absolute;
+  left: 6px;
+  width: calc(69px - 10px);
+  height: calc(9px - 0px);
+  background-color: #fff;
+  border-radius: 0 0 5px 5px;
+  z-index: 1;
+}
+.arm__tooth:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background-color: #cfdce5;
+}
+
+.arm__tongue {
+  position: absolute;
+  bottom: 0;
+  right: 3px;
+  width: calc(58px - 10px);
+  height: calc(16px - 0px);
+  border-radius: 15px 0 0 0;
+  background-color: #dd3e62;
+}
+.arm__tongue:before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 12px;
+  width: 22px;
+  height: 3px;
+  border-radius: 15px;
+  background-color: #fff;
+  opacity: 0.2;
+}
+
+.beard {
+  position: absolute;
+  background-color: #4E211E;
+  width: 140px;
+  height: 86px;
+  bottom: 0;
+  left: 0px;
+  border-radius: 0 0 60px 60px;
+}
+
+.beard:before {
+  content: '';
+  position: absolute;
+  background-color: #FF8F6A;
+  width: 140px;
+  height: 21px;
+  top: -3px;
+  left: 0px;
+  border-radius: 0px 0px 47px 47px;
+}
+
+/*____________________________________________________________
+######## Neck
+____________________________________________________________*/
+.neck {
+  overflow: hidden;
+  bottom: 0;
+  width: 58px;
+  height: 31px;
+  background-color: #FF8F6A;
+}
+.neck:after {
+  content: "";
+  position: absolute;
+  width: 58px;
+  height: 18px;
+  border-radius: 0 0 50% 50%/0 0 100% 100%;
+  background-color: #F95E2E;
+}
+
+/*____________________________________________________________
+####### Body
+____________________________________________________________*/
+.bodyWrap {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 107px;
+}
+
+.bodyWrap__body {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  border-radius: 100px 0 0 0;
+  background-color: #535EE9;
+  background-size: 20px 20px;
+  overflow: hidden;
+}
+.bodyWrap__body:before {
+  content: '';
+  position: absolute;
+  left: 50px;
+  top: 58px;
+  width: 5px;
+  height: 50px;
+  border-radius: 5px 5px 0 0;
+  background-color: brown;
+  mix-blend-mode: luminosity;
+}
+.bodyWrap__body:nth-child(2) {
+  transform: scaleX(-1);
+  background-color: #032375;
+}
+
+.collar {
+  top: -50px;
+  width: 120px;
+  height: 170px;
+  border-radius: 100%;
+  background-color: #4d5c68;
+}
+
+.shirt {
+  top: 50px;
+  width: 0;
+  height: 0;
+  border-left: 35px solid transparent;
+  border-right: 35px solid transparent;
+  border-top: 200px solid #fafac3;
+}
+
+.button {
+  top: 82px;
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  background-color: #4d5c68;
+}
+.button:nth-child(2) {
+  top: 102px;
+}
+
+/*____________________________________________________________
+######## Bow
+____________________________________________________________*/
+.bowWrap {
+  position: absolute;
+  top: -17px;
+  left: 85px;
+  width: 80px;
+  height: 46px;
+}
+.bowWrap__bowShadow:before {
+  content: "";
+  position: absolute;
+  left: 40px;
+  top: -4px;
+  width: 50px;
+  height: 50px;
+  background-color: #0C3496;
+  clip-path: polygon(68% 0, 100% 50%, 55% 100%, 0 42%);
+  z-index: 2;
+}
+.bowWrap__bowShadow:after {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: -3px;
+  width: 50px;
+  height: 50px;
+  background-color: #5F70ED;
+  clip-path: polygon(68% 0, 100% 50%, 55% 100%, 0 42%);
+  transform: scaleX(-1);
+  z-index: 2;
+}
+.bowWrap__bowShadow:nth-child(2):before {
+  top: 2px;
+  background-color: darkred;
+  clip-path: polygon(65% 0, 100% 39%, 55% 100%, 0 29%);
+  z-index: 1;
+}
+.bowWrap__bowShadow:nth-child(2):after {
+  top: 2px;
+  background-color: darkblue;
+  z-index: 1;
+  clip-path: polygon(67% 0, 100% 38%, 55% 100%, 0 30%);
+}
+
+@keyframes blink {
+  0% {
+    transform: scaleY(1);
+  }
+  18% {
+    transform: scaleY(1);
+  }
+  20% {
+    transform: scaleY(0);
+  }
+  25% {
+    transform: scaleY(1);
+  }
+  38% {
+    transform: scaleY(1);
+  }
+  40% {
+    transform: scaleY(0);
+  }
+  45% {
+    transform: scaleY(1);
+  }
+  80% {
+    transform: scaleY(1);
+  }
+}
+.bowWrap__tie {
+  position: absolute;
+  left: 30px;
+  top: 17px;
+  width: 20px;
+  height: 20px;
+  background-color: #732124;
+  border-radius: 5px;
+}
+.bowWrap__tie:before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  width: 20px;
+  height: 87px;
+  border-radius: 5px 5px 0px 0px;
+  background-color: #9B2D30;
+}
+/*____________________________________________________________
+##### Illustration Imac Panel
+____________________________________________________________*/
+.illustrationImac__panel {
+  position: absolute;
+  bottom: -45px;
+  width: 100%;
+  height: 45px;
+  border-radius: 0 0 10px 10px;
+  background-color: #E5E5E5;
+}
+
+.illustrationImac__panelButton {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: #B4B4B4;
+}
+
+/*____________________________________________________________
+##### Illustration Imac Stand
+____________________________________________________________*/
+.illustrationImac__stand {
+  bottom: -127px;
+  width: 154px;
+  height: 0;
+  border-bottom: 82px solid #a4b4ba;
+  border-left: 21px solid transparent;
+  border-right: 21px solid transparent;
+}
+
+.illustrationImac__standShadow {
+  position: absolute;
+  top: 5px;
+  left: -5px;
+  height: 0;
+  width: 122px;
+  border-bottom: 16px solid #889ea6;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+}
+
+.illustrationImac__standBase {
+  top: 82px;
+  width: 284px;
+  height: 20px;
+  border-radius: 15px;
+  background-color: #B4B4B4;
+}
+
+/*____________________________________________________________
+#### Illustration Presentation  
+____________________________________________________________*/
+.illustrationPresentation {
+  position: absolute;
+  top: 25px;
+  left: 20px;
+  width: 215px;
+  height: 179px;
+  background-color: #535EE9;
+  border-radius: 2px;
+  overflow: hidden;
+  animation: levitation 5s linear infinite;
+}
+
+/*____________________________________________________________
+##### Illustration Presentation Panel
+____________________________________________________________*/
+.illustrationPresentationPanel {
+  position: relative;
+  width: 100%;
+  height: 20px;
+  background-color: #2a333c;
+}
+
+.illustrationPresentationPanel__buttonsWrap {
+  position: absolute;
+  top: 6px;
+  left: 10px;
+  height: 8px;
+}
+
+.illustrationPresentationPanel__button {
+  float: left;
+  margin-right: 4px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+/*____________________________________________________________
+##### Illustration Presentation Page
+____________________________________________________________*/
+.illustrationPresentationPage {
+  padding: 8px;
+  width: 100%;
+  height: calc(100% - 20px);
+}
+
+.illustrationPresentationPage__container {
+  width: 100%;
+  height: 100%;
+}
+
+/*____________________________________________________________
+###### Illustration Presentation Banner
+____________________________________________________________*/
+.illustrationPresentationPage__banner {
+  position: relative;
+  width: 100%;
+  height: 72px;
+  margin-bottom: 6px;
+}
+
+.illustrationPresentationPage__img {
+  position: relative;
+  float: right;
+  margin-left: 10px;
+  width: 93px;
+  height: 72px;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+/*____________________________________________________________
+####### Picture
+____________________________________________________________*/
+.picture {
+  position: absolute;
+  width: 93px;
+  height: 72px;
+  border: 6px solid #e1e6e8;
+  background-color: #57c2cb;
+  overflow: hidden;
+  animation: changeDay 10s linear infinite;
+}
+
+.illustrationImac__display .picture {
+  top: 50px;
+  right: 10px;
+  animation-delay: 3s;
+}
+.illustrationImac__display .picture__dayWrap {
+  animation-delay: 3s;
+}
+
+.picture__mountain {
+  position: absolute;
+  bottom: 0;
+}
+.picture__mountain:nth-child(1) {
+  left: 0px;
+  border-left: 22.5px solid transparent;
+  border-right: 22.5px solid transparent;
+  border-bottom: 24px solid #171b25;
+}
+.picture__mountain:nth-child(2) {
+  right: -20px;
+  border-left: 36px solid transparent;
+  border-right: 36px solid transparent;
+  border-bottom: 39px solid #272f3a;
+}
+.picture__mountain:nth-child(3) {
+  left: 26px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #3e4955;
+}
+
+.picture__dayWrap {
+  position: absolute;
+  top: 15px;
+  left: 8px;
+  width: 70px;
+  height: 70px;
+  animation: rotateRays 10s linear infinite;
+}
+
+.picture__dayWrap,
+.picture__sun,
+.picture__moon {
+  border-radius: 50%;
+}
+
+.picture__sun {
+  top: -5px;
+  width: 15px;
+  height: 15px;
+  background-color: #fff;
+}
+
+.picture__moon {
+  bottom: -4px;
+  width: 17px;
+  height: 17px;
+  box-shadow: 4px 4px 0 0 #fec712;
+  transform: rotate(120deg);
+}
+
+.illustrationPresentationPage__lineWrap {
+  float: right;
+  width: calc(100% - 103px);
+  height: 20px;
+}
+
+.illustrationPresentationPage__line {
+  position: relative;
+  margin-bottom: 6px;
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.illustrationPresentationPage__line:last-child {
+  margin-bottom: 0;
+  width: 80%;
+}
+.illustrationPresentationPage__line:after {
+  content: "";
+  position: absolute;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #BBBBFB;
+  animation: slide 3.5s ease infinite;
+}
+.illustrationPresentationPage__line:nth-child(1):after {
+  animation-delay: 0.1s;
+}
+.illustrationPresentationPage__line:nth-child(2):after {
+  animation-delay: 0.2s;
+}
+.illustrationPresentationPage__line:nth-child(3):after {
+  animation-delay: 0.3s;
+}
+.illustrationPresentationPage__line:nth-child(4):after {
+  animation-delay: 0.35s;
+}
+.illustrationPresentationPage__line:nth-child(5):after {
+  animation-delay: 0.4s;
+}
+.illustrationPresentationPage__line:nth-child(6):after {
+  animation-delay: 0.45s;
+}
+
+/*____________________________________________________________
+###### Illustration Presentation Form
+____________________________________________________________*/
+.illustrationPresentationPage__form {
+  position: relative;
+  width: 100%;
+  height: calc(100% - 78px);
+}
+
+.illustrationPresentationPage__input {
+  margin-bottom: 6px;
+  width: 100%;
+  height: 16px;
+  border-radius: 3px;
+  background-color: #fff;
+}
+.illustrationPresentationPage__input:last-child {
+  height: calc(100% - 22px);
+}
+
+/*____________________________________________________________
+#### Illustration Settings
+____________________________________________________________*/
+.illustrationSettings {
+  position: absolute;
+  bottom: 115px;
+  left: 5px;
+  padding: 8px 14px;
+  width: 206px;
+  height: 56px;
+  border-radius: 5px;
+  background-color: #535EE9;
+  animation: levitation 5s linear infinite 3s;
+}
+
+.illustrationSettings__container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/*____________________________________________________________
+##### Illustration Settings Gear
+____________________________________________________________*/
+.illustrationSettings__gearWrap {
+  position: relative;
+  float: left;
+  margin-right: 12px;
+  width: 40px;
+  height: 40px;
+}
+
+.illustrationSettings__gear {
+  width: 50px;
+  height: 50px;
+}
+
+.illustrationSettings__gear svg {
+  position: absolute;
+  max-width: 100%;
+  max-height: 100%;
+  fill: none;
+  stroke: #fff;
+  stroke-width: 35px;
+  animation: rotateRays 7s linear infinite;
+}
+
+.illustrationSettings__gear .teeth {
+  position: absolute;
+  top: 19.32%;
+  left: 19.32%;
+  transform: translate(-19.32%, -19.32%);
+}
+
+.illustrationSettings__gearCircle {
+  width: 29px;
+  height: 29px;
+  border: 8px solid #fff;
+  background-color: #535EE9;
+  border-radius: 50%;
+}
+
+/*____________________________________________________________
+##### Illustration Settings Line
+____________________________________________________________*/
+.illustrationSettings__lineWrap {
+  position: relative;
+  float: left;
+  padding-top: 6.5px;
+  width: calc(100% - 52px);
+  height: 40px;
+}
+
+.illustrationSettings__line {
+  position: relative;
+  width: 100%;
+  height: 3px;
+  margin-bottom: 5px;
+  overflow: hidden;
+}
+.illustrationSettings__line:last-child {
+  margin-bottom: 0;
+  width: 60%;
+}
+.illustrationSettings__line:after {
+  content: "";
+  position: absolute;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  animation: slide 3.5s ease infinite;
+}
+.illustrationSettings__line:nth-child(1):after {
+  animation-delay: 0.1s;
+}
+.illustrationSettings__line:nth-child(2):after {
+  animation-delay: 0.2s;
+}
+.illustrationSettings__line:nth-child(3):after {
+  animation-delay: 0.3s;
+}
+.illustrationSettings__line:nth-child(4):after {
+  animation-delay: 0.35s;
+}
+
+/*____________________________________________________________
+# Animation Pack
+____________________________________________________________*/
+@keyframes openFolder {
+  0% {
+    left: 0;
+    transform: skew(0);
+  }
+  20% {
+    left: -5px;
+    height: 26px;
+    transform: skew(20deg);
+  }
+  80% {
+    left: -5px;
+    height: 26px;
+    transform: skew(20deg);
+  }
+  100% {
+    left: 0;
+    height: 31px;
+    transform: skew(0);
+  }
+}
+@keyframes openFile {
+  0% {
+    bottom: 0;
+  }
+  20% {
+    bottom: 10px;
+  }
+  80% {
+    bottom: 10px;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+@keyframes slide {
+  0% {
+    left: -100%;
+  }
+  22% {
+    left: 0%;
+  }
+  78% {
+    left: 0%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+@keyframes scrollCode {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: -20px;
+  }
+}
+@keyframes rotateRays {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes changeDay {
+  0% {
+    background-color: #7dcbd8;
+  }
+  25% {
+    background-color: #2a333c;
+  }
+  60% {
+    background-color: #2a333c;
+  }
+  75% {
+    background-color: #7dcbd8;
+  }
+  100% {
+    background-color: #7dcbd8;
+  }
+}
+@keyframes lineDiagram {
+  0% {
+    height: 10%;
+  }
+  50% {
+    height: 100%;
+  }
+  100% {
+    left: 10%;
+  }
+}
+@keyframes levitation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@media screen and (min-width: 1500px) and (max-width: 6000px) {
+  .services {
+    height: 60vh;
+  }
+  .illustration {
+    transform: translate(-74%, -50%) scale(0.8);
+  }
+  .services .home .title {
+    width: 350px;
+    height: 400px;
+    margin-right: 50px;
+  }
+} 
+
+@media screen and (max-width: 1500px) {
+  .services .home {
+    margin-left: 125px;
+  }
+  .illustration {
+    transform: translate(-75%, -50%) scale(0.8);
+  }
+}
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  .services .home {
+    flex-direction: column;
+    margin-left: 125px;
+  }
+  .illustration {
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+  .services .home .title {
+    width: 600px;
+    height: 250px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .services {
+    height: 80vh;
+  }
+  .illustration {
+    transform: translate(-50%, -75%) scale(0.6)
+  }
+  .services .home .title {
+    height: 250px;
+    margin-bottom: 150px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .illustration {
+    transform: translate(-50%, -70%) scale(0.6);
+  }
+}
+@media screen and (max-width: 600px) {
+  .services .home {
+    flex-direction: column;
+    margin-left: 0;
+  }
+  .illustration {
+    transform: translate(-50%, -70%) scale(0.5);
+  }
+  .services .home .title {
+    height: 320px;
+  }
+} 
+@media screen and (max-width: 480px) {
+  .services {
+    height: 90vh;
+  }
+  .illustration {
+    transform: translate(-50%, -85%) scale(0.4);
+  }
+  .services .home .title {
+    width: 350px;
+    height: 350px;
+    margin-bottom: 350px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .services {
+    height: 90vh;
+  }
+  .illustration {
+    transform: translate(-50%, -88%) scale(0.4);
+  }
+  .services .home .title {
+    width: 350px;
+    height: 350px;
+    margin-bottom: 200px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .services {
+    height: 90vh;
+  }
+  .illustration {
+    transform: translate(-50%, -86%) scale(0.3);;
+  }
+  .services .home .title {
+    width: 320px;
+    height: 350px;
+    margin-bottom: 400px;
+  }
+}
+.slidershow {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 75vh;
+  border-radius: 5px;
+  background-color: #002188;
+  overflow: hidden;
+  }
+.slides {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 1200px;
+  height: 650px;
+  display: flex;
+  padding: 100px;
+  border-radius: 5px;
+}
+.slides input[name='r'] {
+  position: absolute;
+  display: none;
+}
+.slides .slide {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  padding: 20px;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(255,255,255,0.2);
+  border-top: 1px solid rgba(255,255,255,0.5);
+  border-left: 1px solid rgba(255,255,255,0.5);
+  border-radius: 5px;
+  z-index: 1;
+}
+.slides .slide h2 {
+  position: relative;
+  font-size: 1rem;
+  color:  rgba(255,255,255,1);
+  font-family: 700;
+}
+.slides .slide p {
+  position: relative;
+  margin-top: 10px;
+  font-size: 0.8rem;
+  color:  rgba(255,255,255,1);
+  font-weight: 500;
+}
+@media screen and (max-width:  1200px) {
+  .slides {
+    margin-left: 125px;
+  }
+}
+@media screen and (min-width: 601px) and (max-width: 1000px) {
+  .slides {
+    height: 900px;
+    padding: 20px;
+  }
+  .slides .slide {
+      width: 300px;
+      height: 250px;
+  }
+  .slides .slide h2 {
+    font-size: 1rem;
+  }
+  .slides .slide p {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (max-width:  991px) {
+  .slidershow {
+    height: 90vh;
+  }
+}
+@media screen and (max-width: 600px) {
+  .slidershow {
+    position: relative;
+    width: 100vw;
+    height: 60vh;
+    border-radius: 0;
+    overflow: hidden;
+  }
+  .middle {
+    position: relative;
+  }
+  .slides {
+    width: 500%;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    flex-wrap: nowrap;
+    margin-left: 0;
+  }
+  .slides .slide:before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(255,255,255,0.1);
+    z-index: 1;
+  }
+  .slides .slide {
+    position: absolute;
+    width: 320px;
+    height: 500px;
+    transition: 0.6s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: darkblue;
+    border-top: 1px solid rgba(255,255,255,0.5);
+    border-left: 1px solid rgba(255,255,255,0.5);
+  }
+  .slides .slide1 {
+    top: -10%;
+    left: 20%;
+  }
+  .slides .slide2 {
+    top: -10%;
+    left: 100%;
+  }
+  .slides .slide3 {
+    top: -10%;
+    left: 185%;
+  }
+  .slides .slide4 {
+    top: -10%;
+    left: 285%;
+  }
+  .slides .slide5 {
+    top: -10%;
+    left: 385%;
+  }
+  .slides .slide6 {
+    top: -10%;
+    left: 485%;
+  }
+  .slides .slide h2 {
+    position: relative;
+    font-size: 2rem;
+    color: rgba(255,255,255,1);
+    font-weight: 700;
+  }
+  .slides .slide p {
+    position: relative;
+    margin-top: 10px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: rgba(255,255,255,1);
+  }
+  .slidernav {
+    position: absolute;
+    width:  300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+  }
+  .slidernav .circle {
+    width:  30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,1);
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+  .slidernav .circle:hover {
+    background-color: rgba(255,255,255,1);
+  }
+  input[name='r'] {
+    position: absolute;
+    display: none;
+  }
+  #slide1:checked ~ .slide1, 
+  #slide2:checked ~ .slide2,
+  #slide3:checked ~ .slide3,
+  #slide4:checked ~ .slide4,
+  #slide5:checked ~ .slide5,
+  #slide6:checked ~ .slide6{
+    left: 20%;
+    top: -10%;
+    z-index: 1;
+  }
+  .slides .slide1 {
+    left: 20%;
+  }
+}
+@media (max-width: 480px) {
+  #slide1:checked ~ .slide1, 
+  #slide2:checked ~ .slide2,
+  #slide3:checked ~ .slide3,
+  #slide4:checked ~ .slide4,
+  #slide5:checked ~ .slide5,
+  #slide6:checked ~ .slide6{
+    left: 12%;
+    z-index: 1;
+  }
+  .slides .slide1 {
+    left: 12%;
+  }
+  .slides .slide h2 {
+    position: relative;
+    font-size: 1.5rem;
+    color: rgba(255,255,255,1);
+    font-weight: 700;
+  }
+  .slides .slide p {
+    position: relative;
+    margin-top: 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgba(255,255,255,1);
+  }
+}
+@media (max-width: 375px) {
+  #slide1:checked ~ .slide1, 
+  #slide2:checked ~ .slide2,
+  #slide3:checked ~ .slide3,
+  #slide4:checked ~ .slide4,
+  #slide5:checked ~ .slide5,
+  #slide6:checked ~ .slide6{
+    left: 2%;
+    z-index: 1;
+  }
+  .slidernav {
+    width: 250px;
+  }
+  .slides .slide1 {
+    left: 2%;
+  }
+}
+
+ol, ul {
+  list-style: none;
+}
+
+.intuitiveBaseHousing, .intuitiveNeck, .intuitiveLightBulbCircle, .sociableDisplay__buttonsWrap, .sociableDisplay__avatar, .respImac__standBase, .respImac__stand {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.intuitiveIcon, .sociableLink__figure:before, .sociableLink__figure:after, .sociableIcon, .respBrowser, .responsiveIcon, .dynamicIcon, .clockFaceContainer__clockCircle, .fastClockWrap__clock, .fastIcon, .learnabilityGear__gearCircle, .learnabilityGear__gear, .learnabilityIcon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/*____________________________________________________________
+#Variables
+____________________________________________________________*/
+.__button_exit {
+  background-color: #FE384F;
+}
+.__button_minimize {
+  background-color: #FFBA55;
+}
+.__button_screen {
+  background-color: #2B888F;
+}
+/*____________________________________________________________
+### Card wrap
+____________________________________________________________*/
+.iconCard {
+  float: left;
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border-left: 1px solid rgba(255,255,255,0.25);
+  border-top: 1px solid rgba(255,255,255,0.25)f;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 
+              0 1px 2px rgba(0, 0, 0, 0.24);
+}
+.iconCard:nth-child(3n) {
+  margin-right: 0;
+}
+/*____________________________________________________________
+#### Learnability Icon
+____________________________________________________________*/
+.learnabilityIcon {
+  width: 81px;
+  height: 61px;
+}
+/*____________________________________________________________
+##### Learnability Editor
+____________________________________________________________*/
+.learnabilityEditor {
+  position: absolute;
+  right: 0;
+  width: 41px;
+  height: 100%;
+}
+/*____________________________________________________________
+###### Learnability Editor Panel
+____________________________________________________________*/
+.learnabilityEditor__panel {
+  position: relative;
+  width: 100%;
+  height: 5px;
+  background-color: #2a333c;
+}
+.learnabilityEditor__buttonsWrap {
+  position: absolute;
+  top: 1px;
+  left: 2px;
+  height: 2px;
+}
+
+.learnabilityEditor__button {
+  float: left;
+  margin-right: 1px;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+}
+
+/*____________________________________________________________
+###### Learnability Editor Code
+____________________________________________________________*/
+.learnabilityEditor__codeWrap {
+  position: relative;
+  padding: 6px;
+  width: 100%;
+  height: calc(100% - 5px);
+  background-color: #535EE9;
+}
+
+.learnabilityEditor__scrollBox {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.learnabilityEditor__codeList {
+  position: absolute;
+  width: 100%;
+  animation: learnabilityScrollCode 0.9s linear infinite;
+}
+
+.learnabilityEditor__codeItem {
+  position: relative;
+  margin-bottom: 2px;
+  width: 100%;
+  height: 7px;
+}
+
+.learnabilityEditor__codeLine {
+  position: absolute;
+  height: 1px;
+  overflow: hidden;
+}
+.learnabilityEditor__codeLine:nth-child(1) {
+  top: 0px;
+  left: 0px;
+  width: 7px;
+}
+.learnabilityEditor__codeLine:nth-child(2) {
+  top: 0px;
+  left: 9px;
+  width: 11px;
+}
+.learnabilityEditor__codeLine:nth-child(3) {
+  top: 3px;
+  left: 4px;
+  width: 21px;
+}
+.learnabilityEditor__codeLine:nth-child(4) {
+  bottom: 0px;
+  right: 7px;
+  width: 14px;
+}
+.learnabilityEditor__codeLine:nth-child(5) {
+  bottom: 0px;
+  right: 0px;
+  width: 5px;
+}
+.learnabilityEditor__codeLine:after {
+  content: "";
+  position: absolute;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #FB61F8;
+  animation: slide 3.5s ease infinite;
+}
+.learnabilityEditor__codeLine:nth-child(2):after {
+  animation-delay: 0.2s;
+}
+.learnabilityEditor__codeLine:nth-child(3):after {
+  animation-delay: 0.4s;
+}
+.learnabilityEditor__codeLine:nth-child(4):after {
+  animation-delay: 0.6s;
+}
+.learnabilityEditor__codeLine:nth-child(5):after {
+  animation-delay: 0.7s;
+}
+.learnabilityEditor__codeLine:nth-child(3):after, .learnabilityEditor__codeLine:nth-child(4):after, .learnabilityEditor__codeLine:nth-child(5):after {
+  background-color: #fff;
+}
+
+/*____________________________________________________________
+##### Learnability Keyboard
+____________________________________________________________*/
+.learnabilityKeyboard {
+  position: absolute;
+  bottom: 0;
+  padding: 2px;
+  width: 66px;
+  height: 26px;
+  background-color: #e6e5e5;
+}
+
+.learnabilityKeyboard__line {
+  position: relative;
+  margin-bottom: 1px;
+  width: 100%;
+  height: 3.4px;
+  overflow: hidden;
+}
+.learnabilityKeyboard__line:last-child {
+  margin-bottom: 0;
+}
+.learnabilityKeyboard__line:nth-child(1) .learnabilityKeyboard__button:nth-child(14) {
+  width: 4.5px;
+}
+.learnabilityKeyboard__line:nth-child(2) .learnabilityKeyboard__button:nth-child(1) {
+  width: 4.5px;
+}
+.learnabilityKeyboard__line:nth-child(3) .learnabilityKeyboard__button:nth-child(1) {
+  width: 6.3px;
+}
+.learnabilityKeyboard__line:nth-child(3) .learnabilityKeyboard__button:nth-child(13) {
+  width: 6.3px;
+}
+.learnabilityKeyboard__line:nth-child(4) .learnabilityKeyboard__button:nth-child(1) {
+  width: 8.5px;
+}
+.learnabilityKeyboard__line:nth-child(4) .learnabilityKeyboard__button:nth-child(12) {
+  width: 8.5px;
+}
+.learnabilityKeyboard__line:nth-child(5) .learnabilityKeyboard__button:nth-child(5) {
+  width: 22px;
+}
+.learnabilityKeyboard__line:nth-child(2) .learnabilityKeyboard__button:nth-child(4) {
+  animation: keyboardClick 4s linear infinite 0.4s;
+}
+.learnabilityKeyboard__line:nth-child(3) .learnabilityKeyboard__button:nth-child(10) {
+  animation: keyboardClick 4s linear infinite 0.8s;
+}
+.learnabilityKeyboard__line:nth-child(2) .learnabilityKeyboard__button:nth-child(10) {
+  animation: keyboardClick 4s linear infinite 1.2s;
+}
+.learnabilityKeyboard__line:nth-child(5) .learnabilityKeyboard__button:nth-child(5) {
+  animation: keyboardClick 4s linear infinite 1.6s;
+}
+.learnabilityKeyboard__line:nth-child(2) .learnabilityKeyboard__button:nth-child(3) {
+  animation: keyboardClick 4s linear infinite 2s;
+}
+.learnabilityKeyboard__line:nth-child(1) .learnabilityKeyboard__button:nth-child(11) {
+  animation: keyboardClick 4s linear infinite 2.4s;
+}
+.learnabilityKeyboard__line:nth-child(2) .learnabilityKeyboard__button:nth-child(5) {
+  animation: keyboardClick 4s linear infinite 2.8s;
+}
+.learnabilityKeyboard__line:nth-child(4) .learnabilityKeyboard__button:nth-child(12) {
+  animation: keyboardClick 4s linear infinite 3.2s;
+}
+.learnabilityKeyboard__line:nth-child(3) .learnabilityKeyboard__button:nth-child(4) {
+  animation: keyboardClick 4s linear infinite 3.6s;
+}
+
+.learnabilityKeyboard__button {
+  position: relative;
+  margin-right: 1px;
+  float: left;
+  width: 3.4px;
+  height: 3.4px;
+  background-color: #fff;
+}
+.learnabilityKeyboard__button:last-child {
+  margin-right: 0;
+}
+
+/*____________________________________________________________
+##### Learnability Gear
+____________________________________________________________*/
+.learnabilityGear {
+  position: absolute;
+  top: 4px;
+  left: 5px;
+  width: 30px;
+  height: 26px;
+}
+.learnabilityGear:before, .learnabilityGear:after {
+  content: "";
+  position: absolute;
+  border: solid #FB61F8;
+  width: 3px;
+  height: 100%;
+  box-sizing: border-box;
+}
+.learnabilityGear:before {
+  border-width: 1px 0 1px 1px;
+}
+.learnabilityGear:after {
+  right: 0;
+  border-width: 1px 1px 1px 0;
+}
+
+.learnabilityGear__gear {
+  width: 30px;
+  height: 30px;
+}
+.learnabilityGear__gear svg {
+  position: absolute;
+  max-width: 100%;
+  max-height: 100%;
+  fill: none;
+  stroke: #535EE9;
+  stroke-width: 24px;
+  animation: rotateRays 7s linear infinite;
+}
+.learnabilityGear__gear .teeth {
+  position: absolute;
+  top: 19.32%;
+  left: 19.32%;
+  transform: translate(-19.32%, -19.32%);
+}
+
+.learnabilityGear__gearCircle {
+  width: 17px;
+  height: 17px;
+  border: 4px solid #002188;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+/*____________________________________________________________
+#### Fast Icon
+____________________________________________________________*/
+.fastIcon {
+  width: 69px;
+  height: 69px;
+}
+/*____________________________________________________________
+##### Fast Browser
+____________________________________________________________*/
+.fastBrowser {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+/*____________________________________________________________
+###### Fast Browser Panel
+____________________________________________________________*/
+.fastBrowser__panel {
+  position: relative;
+  padding: 3px 5px;
+  width: 100%;
+  height: 11px;
+  background-color: #2a333c;
+}
+
+.fastBrowser__buttonsWrap {
+  float: left;
+  margin-right: 5px;
+  width: 18px;
+  height: 4px;
+}
+
+.fastBrowser__button {
+  float: left;
+  margin-right: 3px;
+  width: 4px;
+  height: 4px;
+}
+.fastBrowser__button:last-child {
+  margin-right: 0;
+}
+
+.fastBrowser__input {
+  position: relative;
+  float: left;
+  width: calc(100% - 23px);
+  height: 4px;
+  background-color: #fff;
+}
+.fastBrowser__input:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  width: 7px;
+  height: 100%;
+  background-color: #2B888F;
+}
+
+/*____________________________________________________________
+###### Fast Browser Page
+____________________________________________________________*/
+.fastBrowser__page {
+  position: relative;
+  padding: 5px;
+  width: 100%;
+  height: calc(100% - 11px);
+  border: 4px solid #e6e5e5;
+  background-color: #fff;
+}
+
+.fastBrowser__lineWrap {
+  width: 100%;
+  height: 100%;
+}
+
+.fastBrowser__line {
+  position: relative;
+  margin-bottom: 2px;
+  width: 100%;
+  height: 2px;
+  overflow: hidden;
+}
+.fastBrowser__line:first-child {
+  height: 20px;
+}
+.fastBrowser__line:last-child {
+  margin-bottom: 0;
+}
+.fastBrowser__line:after {
+  content: "";
+  position: absolute;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #BBBBFB;
+  animation: slide 3.5s ease infinite;
+}
+.fastBrowser__line:nth-child(1):after {
+  background-color: #535EE9;
+}
+.fastBrowser__line:nth-child(2):after {
+  animation-delay: 0.1s;
+}
+.fastBrowser__line:nth-child(3):after {
+  animation-delay: 0.2s;
+}
+.fastBrowser__line:nth-child(4):after {
+  animation-delay: 0.3s;
+}
+.fastBrowser__line:nth-child(5):after {
+  animation-delay: 0.4s;
+}
+.fastBrowser__line:nth-child(6):after {
+  animation-delay: 0.45s;
+}
+
+/*____________________________________________________________
+##### Fast Clock Wrap
+____________________________________________________________*/
+.fastClockWrap {
+  position: absolute;
+  top: 30px;
+  right: -30px;
+  width: 68px;
+  height: 68px;
+}
+
+/*____________________________________________________________
+###### Fast Clock Gear
+____________________________________________________________*/
+.fastClockWrap__gear {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.fastClockWrap__gear svg {
+  position: absolute;
+  max-width: 100%;
+  max-height: 100%;
+  fill: none;
+  stroke: #535EE9;
+  stroke-width: 24px;
+  animation: rotateRays 7s linear infinite;
+}
+.fastClockWrap__gear .teeth {
+  position: absolute;
+  top: 19.32%;
+  left: 19.32%;
+  transform: translate(-19.32%, -19.32%);
+}
+
+/*____________________________________________________________
+###### Fast Clock
+____________________________________________________________*/
+.fastClockWrap__clock {
+  width: 38px;
+  height: 38px;
+  overflow: hidden;
+  border: 4px solid #2a333c;
+  border-radius: 50%;
+}
+.clockFaceContainer {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+.clockFaceContainer svg {
+  position: absolute;
+  max-width: 100%;
+  max-height: 100%;
+  fill: none;
+  stroke: #2a333c;
+  stroke-width: 4px;
+  stroke-linecap: round;
+}
+.clockFaceContainer .teeth {
+  position: absolute;
+  top: 19.32%;
+  left: 19.32%;
+  transform: translate(-19.32%, -19.32%);
+}
+.clockFaceContainer__clockHand {
+  position: absolute;
+  top: calc(50% - 4px);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1px;
+  height: 12px;
+  transform-origin: 50% 4px;
+  background-color: #535EE9;
+  animation: rotateRays 12s linear infinite;
+}
+.clockFaceContainer__clockCircle {
+  width: 5px;
+  height: 5px;
+  border: 1px solid #002188;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+/*____________________________________________________________
+#### Dynamic Icon
+____________________________________________________________*/
+.dynamicIcon {
+  width: 47px;
+  height: 68px;
+}
+/*____________________________________________________________
+##### Dynamic Browser
+____________________________________________________________*/
+.dynamicBrowser {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+/*____________________________________________________________
+###### Dynamic Browser Panel
+____________________________________________________________*/
+.dynamicBrowser__panel {
+  width: 100%;
+  height: 5px;
+  background-color: #2a333c;
+}
+
+.dynamicBrowser__buttonsWrap {
+  position: absolute;
+  top: 1px;
+  left: 2px;
+  height: 2px;
+}
+
+.dynamicBrowser__button {
+  float: left;
+  margin-right: 1px;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+}
+
+/*____________________________________________________________
+###### Dynamic Browser Header
+____________________________________________________________*/
+.dynamicBrowser__header {
+  position: relative;
+  padding: 4px;
+  width: 100%;
+  height: 24px;
+  background-color: #e6e5e5;
+}
+
+.dynamicBrowser__lineWrap {
+  position: relative;
+  padding-top: 2px;
+  margin-bottom: 3px;
+  width: 100%;
+  height: 5px;
+  background-color: #535EE9;
+}
+
+.dynamicBrowser__line {
+  position: relative;
+  float: left;
+  margin-left: 3px;
+  width: 6px;
+  height: 1px;
+  overflow: hidden;
+}
+.dynamicBrowser__line:after {
+  content: "";
+  position: absolute;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #2a333c;
+  animation: slide 3.5s ease infinite;
+}
+.dynamicBrowser__line:nth-child(2):after {
+  animation-delay: 0.2s;
+}
+.dynamicBrowser__line:nth-child(3):after {
+  animation-delay: 0.4s;
+}
+.dynamicBrowser__line:nth-child(4):after {
+  animation-delay: 0.6s;
+}
+
+.dynamicBrowser__title {
+  position: relative;
+  margin-bottom: 3px;
+  width: 100%;
+  height: 3px;
+  overflow: hidden;
+}
+.dynamicBrowser__title:after {
+  content: "";
+  position: absolute;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #FB61F8;
+  animation: slide 3.5s ease infinite;
+  animation-delay: 0.2s;
+}
+
+.dynamicBrowser__subtitle {
+  position: relative;
+  margin: 0 auto;
+  width: 60%;
+  height: 2px;
+  overflow: hidden;
+}
+.dynamicBrowser__subtitle:after {
+  content: "";
+  position: absolute;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #2a333c;
+  animation: slide 3.5s ease infinite;
+  animation-delay: 0.2s;
+}
+
+/*____________________________________________________________
+###### Dynamic Browser Main
+____________________________________________________________*/
+.dynamicBrowser__main {
+  position: relative;
+  width: 100%;
+  height: 22px;
+  background-color: #7dcbd8;
+  animation: changeDay 10s linear infinite;
+}
+.dynamicBrowser__main .landscape {
+  position: absolute;
+  top: 0;
+  left: 7px;
+  transform: scale(0.8);
+  animation: none;
+}
+.dynamicBrowser__main .landscapePicture__bg {
+  width: 100%;
+  height: 100%;
+  background: #7dcbd8;
+  opacity: 1;
+  animation: changeDay 10s linear infinite;
+}
+
+/*____________________________________________________________
+###### Dynamic Browser Footer
+____________________________________________________________*/
+.dynamicBrowser__footer {
+  position: relative;
+  padding: 2px 4px;
+  width: 100%;
+  height: 17px;
+  background-color: #e6e5e5;
+}
+
+.dynamicBrowser__productList {
+  width: 100%;
+  height: 100%;
+}
+
+.dynamicBrowser__product {
+  position: relative;
+  float: left;
+  margin-right: 5%;
+  width: 30%;
+  height: 100%;
+}
+.dynamicBrowser__product:last-child {
+  margin-right: 0;
+}
+
+.dynamicBrowser__productImg {
+  position: relative;
+  margin-bottom: 1px;
+  width: 100%;
+  height: 7px;
+  overflow: hidden;
+}
+.dynamicBrowser__productImg:after {
+  content: "";
+  position: absolute;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #535EE9;
+  animation: slide 3.5s ease infinite;
+}
+
+.dynamicBrowser__productLineWrap {
+  width: 100%;
+  height: 5px;
+}
+
+.dynamicBrowser__productLine {
+  position: relative;
+  float: left;
+  margin-bottom: 1px;
+  width: 100%;
+  height: 1px;
+  overflow: hidden;
+}
+.dynamicBrowser__productLine:nth-child(3) {
+  width: 50%;
+}
+.dynamicBrowser__productLine:after {
+  content: "";
+  position: absolute;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #BBBBFB;
+  animation: slide 3.5s ease infinite;
+}
+.dynamicBrowser__productLine:nth-child(1):after {
+  animation-delay: 0.2s;
+}
+.dynamicBrowser__productLine:nth-child(2):after {
+  animation-delay: 0.4s;
+}
+.dynamicBrowser__productLine:nth-child(3):after {
+  animation-delay: 0.6s;
+}
+
+/*____________________________________________________________
+##### Dynamic Dialog
+____________________________________________________________*/
+.dynamicDialog {
+  position: absolute;
+  padding: 2px;
+  animation: levitation 5s linear infinite;
+}
+.dynamicDialog.dynamicDialog_left {
+  top: 18px;
+  left: -18px;
+  width: 14px;
+  background-color: #535EE9;
+}
+.dynamicDialog.dynamicDialog_left .dynamicDialog__line:last-child {
+  width: 50%;
+}
+.dynamicDialog.dynamicDialog_left .dynamicDialog__line:after {
+  background-color: #fff;
+}
+.dynamicDialog.dynamicDialog_right {
+  top: 16px;
+  right: -20px;
+  width: 18px;
+  animation-delay: 2s;
+}
+.dynamicDialog.dynamicDialog_right .dynamicDialog__line:first-child {
+  width: 50%;
+}
+.dynamicDialog.dynamicDialog_right .dynamicDialog__line:after {
+  background-color: #535EE9;
+}
+
+.dynamicDialog__line {
+  position: relative;
+  float: left;
+  margin-bottom: 1px;
+  width: 100%;
+  height: 1px;
+  overflow: hidden;
+}
+.dynamicDialog__line:last-child {
+  width: 50%;
+}
+.dynamicDialog__line:after {
+  content: "";
+  position: absolute;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #2a333c;
+  animation: slide 3.5s ease infinite;
+}
+.dynamicDialog__line:nth-child(2):after {
+  animation-delay: 0.2s;
+}
+.dynamicDialog__line:nth-child(3):after {
+  animation-delay: 0.4s;
+}
+.dynamicDialog__line:nth-child(4):after {
+  animation-delay: 0.6s;
+}
+/*____________________________________________________________
+##### Dynamic Dashed Frame
+____________________________________________________________*/
+.dynamicDashedFrame {
+  position: absolute;
+  top: 36px;
+  left: -13px;
+  width: 22px;
+  height: 18px;
+  border: 1px dashed #FB61F8;
+  animation: levitation 5s linear infinite 2.5s;
+}
+/*____________________________________________________________
+##### Dynamic Chart
+____________________________________________________________*/
+.dynamicChart {
+  position: absolute;
+  padding: 2px;
+  top: 31px;
+  right: -13px;
+  width: 18px;
+  height: 12px;
+  background-color: #BBBBFB;
+  animation: levitation 5s linear infinite 1s;
+}
+.dynamicChart__line {
+  position: relative;
+  bottom: 0;
+  float: left;
+  margin-right: 1px;
+  width: 2px;
+  height: 100%;
+  overflow: hidden;
+}
+.dynamicChart__line:last-child {
+  margin-right: 0;
+}
+.dynamicChart__line:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 10%;
+  background-color: #535EE9;
+  animation: lineDiagram 2.5s ease infinite;
+}
+.dynamicChart__line:nth-child(1):after {
+  background-color: #002188;
+}
+.dynamicChart__line:nth-child(4):after {
+  background-color: #FB61F8;
+}
+.dynamicChart__line:nth-child(1):after {
+  animation-delay: 0.8s;
+}
+.dynamicChart__line:nth-child(2):after {
+  animation-delay: 1.4s;
+}
+.dynamicChart__line:nth-child(3):after {
+  animation-delay: 0.4s;
+}
+.dynamicChart__line:nth-child(4):after {
+  animation-delay: 1.2s;
+}
+.dynamicChart__line:nth-child(5):after {
+  animation-delay: 1.6s;
+}
+
+/*____________________________________________________________
+#### Responsive Icon
+____________________________________________________________*/
+.responsiveIcon {
+  width: 69px;
+  height: 46px;
+}
+/*____________________________________________________________
+##### Responsive Imac
+____________________________________________________________*/
+.respImac {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+/*____________________________________________________________
+###### Responsive Imac Display
+____________________________________________________________*/
+.respImac__display {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 3.2px solid #2a333c;
+  border-radius: 2px 2px 0 0;
+  background-color: #535EE9;
+}
+/*____________________________________________________________
+####### Responsive Browser
+____________________________________________________________*/
+.respBrowser {
+  width: 60%;
+  height: 70%;
+  background-color: #fff;
+}
+
+/*____________________________________________________________
+######## Responsive Browser Panel
+____________________________________________________________*/
+.respBrowser__panel {
+  width: 100%;
+  height: 4px;
+  background-color: #2a333c;
+}
+
+.respBrowser__buttonsWrap {
+  position: absolute;
+  top: 0.5px;
+  left: 2px;
+  height: 2px;
+}
+
+.respBrowser__button {
+  float: left;
+  margin-right: 1px;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+}
+
+/*____________________________________________________________
+######## Responsive Browser Page
+____________________________________________________________*/
+.respBrowser__page {
+  padding: 1.5px 2.5px 2.5px;
+  width: 100%;
+  height: calc(100% - 4px);
+}
+
+.respBrowser__pageLayout {
+  width: 100%;
+  height: 100%;
+}
+
+/*____________________________________________________________
+######### Responsive Browser Nav
+____________________________________________________________*/
+.respBrowser__nav {
+  margin-bottom: 1px;
+  width: 60%;
+  height: 3px;
+  background-color: #FB61F8;
+}
+
+/*____________________________________________________________
+######### Responsive Browser Banner
+____________________________________________________________*/
+.respBrowser__banner {
+  margin-bottom: 1px;
+  width: 100%;
+  height: 5px;
+  background-color: #535EE9;
+}
+
+/*____________________________________________________________
+######### Responsive Browser Product List
+____________________________________________________________*/
+.respBrowser__productList {
+  width: 100%;
+  height: 9px;
+}
+
+.respBrowser__product {
+  position: relative;
+  float: left;
+  margin-right: 5%;
+  width: 30%;
+  height: 100%;
+}
+.respBrowser__product:last-child {
+  margin-right: 0;
+}
+
+.respBrowser__productImg {
+  position: relative;
+  margin-bottom: 1px;
+  width: 100%;
+  height: 5px;
+  overflow: hidden;
+}
+.respBrowser__productImg:after {
+  content: "";
+  position: absolute;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #BA75F7;
+  animation: slide 3.5s ease infinite;
+}
+.respBrowser__productLineWrap {
+  width: 100%;
+  height: 3px;
+}
+.respBrowser__productLine {
+  position: relative;
+  float: left;
+  margin-bottom: 1px;
+  width: 100%;
+  height: 1px;
+  overflow: hidden;
+}
+.respBrowser__productLine:after {
+  content: "";
+  position: absolute;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #BBBBFB;
+  animation: slide 3.5s ease infinite;
+}
+.respBrowser__productLine:nth-child(1):after {
+  animation-delay: 0.2s;
+}
+.respBrowser__productLine:nth-child(2):after {
+  animation-delay: 0.4s;
+}
+/*____________________________________________________________
+###### Responsive Imac Panel
+____________________________________________________________*/
+.respImac__panel {
+  position: absolute;
+  bottom: -6px;
+  width: 100%;
+  height: 6px;
+  border-radius: 0 0 2px 2px;
+  background-color: #c3cdd1;
+}
+/*____________________________________________________________
+###### Responsive Imac Stand
+____________________________________________________________*/
+.respImac__stand {
+  bottom: -17px;
+  height: 0;
+  width: 23px;
+  border-bottom: 11px solid #E5E5E5;
+  border-left: 5.5px solid transparent;
+  border-right: 5.5px solid transparent;
+}
+.respImac__standShadow {
+  position: absolute;
+  left: 3px;
+  width: 0;
+  height: 0;
+  border-top: 11px solid #a4b4ba;
+  border-left: 12px solid transparent;
+  transform: skew(26deg, 0deg);
+}
+.respImac__standBase {
+  top: 11px;
+  width: 36px;
+  height: 2px;
+  border-radius: 3px 3px 0 0;
+  background-color: #a4b4ba;
+}
+/*____________________________________________________________
+##### Responsive Ipad
+____________________________________________________________*/
+.respIpad {
+  position: absolute;
+  bottom: -19px;
+  left: -14px;
+  width: 29px;
+  height: 42px;
+}
+/*____________________________________________________________
+###### Responsive Ipad Display
+____________________________________________________________*/
+.respIpad__display {
+  position: relative;
+  padding: 2px 2px 2px 1px;
+  width: 100%;
+  height: 100%;
+  border: solid #2a333c;
+  border-width: 4px 2.5px;
+  border-radius: 2px;
+  background-color: #fff;
+}
+/*____________________________________________________________
+####### Ipad Browser
+____________________________________________________________*/
+.ipadBrowser {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+/*____________________________________________________________
+######## Ipad Browser Nav
+____________________________________________________________*/
+.ipadBrowser__nav {
+  margin-bottom: 1px;
+  width: 60%;
+  height: 3px;
+  background-color: #FB61F8;
+}
+/*____________________________________________________________
+######## Ipad Browser Banner
+____________________________________________________________*/
+.ipadBrowser__banner {
+  margin-bottom: 1px;
+  width: 100%;
+  height: 5px;
+  background-color: #535EE9;
+}
+/*____________________________________________________________
+######## Responsive Ipad Product List
+____________________________________________________________*/
+.ipadBrowser__productList {
+  width: 100%;
+  height: calc(100% - 10px);
+}
+.ipadBrowser__product {
+  position: relative;
+  margin-bottom: 2px;
+  width: 100%;
+  height: 5px;
+}
+.ipadBrowser__product:last-child {
+  margin-bottom: 0;
+}
+.ipadBrowser__productImg {
+  float: left;
+  position: relative;
+  margin-right: 2px;
+  width: 5px;
+  height: 5px;
+  overflow: hidden;
+}
+.ipadBrowser__productImg:after {
+  content: "";
+  position: absolute;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #BA75F7;
+  animation: slide 3.5s ease infinite;
+}
+
+.ipadBrowser__productLineWrap {
+  float: left;
+  width: calc(100% - 7px);
+  height: 5px;
+}
+
+.ipadBrowser__productLine {
+  position: relative;
+  float: left;
+  margin-bottom: 1px;
+  width: 100%;
+  height: 1px;
+  overflow: hidden;
+}
+.ipadBrowser__productLine:nth-child(3) {
+  margin-bottom: 0;
+  width: 50%;
+}
+.ipadBrowser__productLine:after {
+  content: "";
+  position: absolute;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #BBBBFB;
+  animation: slide 3.5s ease infinite;
+}
+.ipadBrowser__productLine:nth-child(1):after {
+  animation-delay: 0.2s;
+}
+.ipadBrowser__productLine:nth-child(2):after {
+  animation-delay: 0.4s;
+}
+.ipadBrowser__productLine:nth-child(3):after {
+  animation-delay: 0.5s;
+}
+/*____________________________________________________________
+###### Responsive Ipad Camera
+____________________________________________________________*/
+.respIpad__camera,
+.respIphone__camera,
+.respIpad__button,
+.respIphone__button {
+  position: absolute;
+  height: 2px;
+  background-color: #E5E5E5;
+}
+.respIpad__camera,
+.respIphone__camera {
+  top: 1px;
+  width: 2px;
+  border-radius: 50%;
+}
+.respIpad__camera {
+  left: 13.5px;
+}
+/*____________________________________________________________
+###### Responsive Ipad Button
+____________________________________________________________*/
+.respIpad__button,
+.respIphone__button {
+  bottom: 1px;
+  border-radius: 1px;
+}
+.respIpad__button {
+  left: 10.5px;
+  width: 8px;
+}
+/*____________________________________________________________
+##### Responsive Iphone
+____________________________________________________________*/
+.respIphone {
+  position: absolute;
+  bottom: -19px;
+  right: -6px;
+  width: 17px;
+  height: 31px;
+}
+/*____________________________________________________________
+###### Responsive Iphone Display
+____________________________________________________________*/
+.respIphone__display {
+  position: relative;
+  padding: 1px;
+  width: 100%;
+  height: 100%;
+  border: solid #2a333c;
+  border-width: 4px 2px;
+  border-radius: 2px;
+  background-color: #fff;
+}
+/*____________________________________________________________
+####### Iphone Browser
+____________________________________________________________*/
+.iphoneBrowser {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+/*____________________________________________________________
+######## Iphone Browser Nav
+____________________________________________________________*/
+.iphoneBrowser__nav {
+  margin-bottom: 1px;
+  width: 100%;
+  height: 3px;
+  background-color: #FB61F8;
+}
+/*____________________________________________________________
+######## Responsive Iphone Product List
+____________________________________________________________*/
+.iphoneBrowser__productList {
+  width: 100%;
+  height: calc(100% - 7px);
+}
+.iphoneBrowser__product {
+  position: relative;
+  margin-bottom: 1px;
+  width: 100%;
+  height: 8px;
+}
+.iphoneBrowser__product:last-child {
+  margin-bottom: 0;
+}
+.iphoneBrowser__productImg {
+  position: relative;
+  margin-bottom: 1px;
+  width: 100%;
+  height: 4px;
+  overflow: hidden;
+}
+.iphoneBrowser__productImg:after {
+  content: "";
+  position: absolute;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #BA75F7;
+  animation: slide 3.5s ease infinite;
+}
+.iphoneBrowser__productLineWrap {
+  width: 100%;
+  height: 3px;
+}
+.iphoneBrowser__productLine {
+  position: relative;
+  float: left;
+  margin-bottom: 1px;
+  width: 100%;
+  height: 1px;
+  overflow: hidden;
+}
+.iphoneBrowser__productLine:nth-child(2) {
+  margin-bottom: 0;
+}
+.iphoneBrowser__productLine:after {
+  content: "";
+  position: absolute;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #BBBBFB;
+  animation: slide 3.5s ease infinite;
+}
+.iphoneBrowser__productLine:nth-child(1):after {
+  animation-delay: 0.2s;
+}
+.iphoneBrowser__productLine:nth-child(2):after {
+  animation-delay: 0.4s;
+}
+/*____________________________________________________________
+###### Responsive Iphone Camera
+____________________________________________________________*/
+.respIphone__camera {
+  left: 7.5px;
+}
+/*____________________________________________________________
+###### Responsive Iphone Button
+____________________________________________________________*/
+.respIphone__button {
+  left: 5.5px;
+  width: 6px;
+}
+/*____________________________________________________________
+#### Sociable Icon
+____________________________________________________________*/
+.sociableIcon {
+  width: 50px;
+  height: 32px;
+}
+
+/*____________________________________________________________
+##### Sociable Link
+____________________________________________________________*/
+.sociableLink {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border: dashed #2a333c;
+  animation: levitation 5s linear infinite;
+}
+.sociableLink.sociableLink_posLC {
+  top: 50%;
+  left: -10px;
+  border-width: 1px 0 0 0;
+  animation-delay: 0s;
+}
+.sociableLink.sociableLink_posLC .sociableLink__figure {
+  top: -7px;
+  left: -12px;
+}
+.sociableLink.sociableLink_posLT {
+  top: -10px;
+  left: -1px;
+  border-width: 1px 1px 0 0;
+  animation-delay: 0.8s;
+}
+.sociableLink.sociableLink_posLT .sociableLink__figure {
+  top: -7px;
+  left: -12px;
+}
+.sociableLink.sociableLink_posCT {
+  top: -10px;
+  left: 50%;
+  border-width: 0 0 0 1px;
+  animation-delay: 1.5s;
+}
+.sociableLink.sociableLink_posCT .sociableLink__figure {
+  top: -12px;
+  left: -7px;
+}
+.sociableLink.sociableLink_posRT {
+  top: -10px;
+  right: -1px;
+  border-width: 1px 0 0 1px;
+  animation-delay: 2.2s;
+}
+.sociableLink.sociableLink_posRT .sociableLink__figure {
+  top: -7px;
+  right: -12px;
+}
+.sociableLink.sociableLink_posRC {
+  top: 50%;
+  right: -10px;
+  border-width: 1px 0 0 0;
+  animation-delay: 2.9s;
+}
+.sociableLink.sociableLink_posRC .sociableLink__figure {
+  top: -7px;
+  right: -12px;
+}
+.sociableLink:nth-child(2) .sociableLink__figure, .sociableLink:nth-child(4) .sociableLink__figure {
+  border-radius: 50%;
+  background-color: #FB61F8;
+}
+.sociableLink:nth-child(2) .sociableLink__figure:before, .sociableLink:nth-child(4) .sociableLink__figure:before {
+  border-radius: 50%;
+}
+
+.sociableLink__figure {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: #BA75F7;
+}
+.sociableLink__figure.sociableLink__figure_mail:after {
+  content: "@";
+}
+.sociableLink__figure.sociableLink__figure_money:after {
+  content: "$";
+}
+.sociableLink__figure.sociableLink__figure_tag:after {
+  content: "#";
+}
+.sociableLink__figure.sociableLink__figure_percent:after {
+  content: "%";
+}
+.sociableLink__figure.sociableLink__figure_and:after {
+  content: "&";
+}
+.sociableLink__figure:after {
+  margin-top: 0.5px;
+}
+.sociableLink__figure:before, .sociableLink__figure:after {
+  font-size: 9px;
+}
+.sociableLink__figure:before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border: 1px solid #535EE9;
+}
+/*____________________________________________________________
+##### Sociable Display
+____________________________________________________________*/
+.sociableDisplay {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 3.2px solid #2a333c;
+  border-radius: 1px;
+  background-color: #535EE9;
+}
+/*____________________________________________________________
+###### Sociable Panel
+____________________________________________________________*/
+.sociableDisplay__panel {
+  position: absolute;
+  top: 2.2px;
+  width: 9px;
+}
+.sociableDisplay__panel.sociableDisplay_leftSide {
+  left: 1.8px;
+}
+.sociableDisplay__panel.sociableDisplay_leftSide .sociableDisplay__line:nth-child(1) {
+  margin-top: 6px;
+}
+.sociableDisplay__panel.sociableDisplay_leftSide:before {
+  content: "";
+  position: absolute;
+  margin-bottom: 2px;
+  width: 100%;
+  height: 4px;
+  background-color: #FB61F8;
+}
+.sociableDisplay__panel.sociableDisplay_rightSide {
+  right: 1.8px;
+}
+.sociableDisplay__panel.sociableDisplay_rightSide .sociableDisplay__line:nth-child(1) {
+  width: 50%;
+}
+.sociableDisplay__line {
+  position: relative;
+  margin-bottom: 1px;
+  width: 100%;
+  height: 1px;
+  overflow: hidden;
+}
+.sociableDisplay__line:after {
+  content: "";
+  position: absolute;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #BBBBFB;
+  animation: slide 3.5s ease infinite;
+}
+.sociableDisplay__line:nth-child(6) {
+  width: 50%;
+}
+.sociableDisplay__line:nth-child(2):after {
+  animation-delay: 0.2s;
+}
+.sociableDisplay__line:nth-child(3):after {
+  animation-delay: 0.4s;
+}
+.sociableDisplay__line:nth-child(4):after {
+  animation-delay: 0.6s;
+}
+.sociableDisplay__line:nth-child(5):after {
+  animation-delay: 0.8s;
+}
+.sociableDisplay__line:nth-child(6):after {
+  animation-delay: 1s;
+}
+/*____________________________________________________________
+###### Sociable Avatar
+____________________________________________________________*/
+.sociableDisplay__avatar {
+  top: 2.2px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: #7dcbd8;
+  /*background-image: url("https://i.pinimg.com/originals/05/d9/93/05d99321de948f7f4c24164eec708a15.png");*/
+  background-repeat: no-repeat;
+  background-position: center 2px;
+  background-size: contain;
+}
+
+/*____________________________________________________________
+###### Sociable Buttons Wrap
+____________________________________________________________*/
+.sociableDisplay__buttonsWrap {
+  bottom: 2.2px;
+  width: 16px;
+  height: 2px;
+}
+
+.sociableDisplay__button {
+  float: left;
+  width: 7px;
+  height: 2px;
+}
+.sociableDisplay__button:nth-child(1) {
+  margin-right: 2px;
+  background-color: #002188;
+}
+.sociableDisplay__button:nth-child(2) {
+  background-color: #FB61F8;
+}
+
+/*____________________________________________________________
+##### Sociable Keyboard
+____________________________________________________________*/
+.sociableKeyboard {
+  position: relative;
+  margin-left: -8%;
+  width: calc(100% + 16%);
+  height: 10%;
+  border-radius: 0 0 3px 3px;
+  background-color: #E5E5E5;
+  overflow: hidden;
+}
+
+/*____________________________________________________________
+#### Intuitive Icon
+____________________________________________________________*/
+.intuitiveIcon {
+  width: 50px;
+  height: 59px;
+}
+
+/*____________________________________________________________
+##### Intuitive Rays
+____________________________________________________________*/
+.intuitiveRays {
+  position: absolute;
+  top: -30px;
+  left: -30px;
+  width: 110px;
+  height: 110px;
+}
+.intuitiveRays svg {
+  position: absolute;
+  max-width: 100%;
+  max-height: 100%;
+  fill: none;
+  stroke: #FFBA55;
+  stroke-width: 5px;
+  stroke-linecap: round;
+  animation: rotateRays 3s linear infinite;
+}
+.intuitiveRays .teeth {
+  position: absolute;
+  top: 19.32%;
+  left: 19.32%;
+  transform: translate(-19.32%, -19.32%);
+}
+
+/*____________________________________________________________
+##### Intuitive Lamp
+____________________________________________________________*/
+.intuitiveLightBulb {
+  position: absolute;
+  width: 50px;
+}
+
+.intuitiveLightBulb__silhouette {
+  fill: #FFBA55;
+}
+
+/*____________________________________________________________
+##### Intuitive Lamp Circle
+____________________________________________________________*/
+.intuitiveLightBulbCircle {
+  top: 8px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+/*____________________________________________________________
+##### Intuitive Brain
+____________________________________________________________*/
+.intuitiveBrain {
+  position: absolute;
+  top: 9px;
+  left: 9px;
+  width: 34px;
+  height: 34px;
+  opacity: 0.9;
+  /*background-image: url("https://i.pinimg.com/originals/56/68/37/566837724bf672f1f538df597d55604a.png");*/
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+/*____________________________________________________________
+##### Intuitive Play
+____________________________________________________________*/
+.intuitivePlay {
+  position: absolute;
+  top: 35px;
+  left: -20px;
+  width: 20px;
+  height: 20px;
+  z-index: 1;
+  animation: levitation 5s linear infinite;
+}
+.intuitivePlay path {
+  fill: #535EE9;
+}
+
+/*____________________________________________________________
+##### Intuitive Figures
+____________________________________________________________*/
+.intuitiveBubble {
+  position: absolute;
+  border-radius: 50%;
+  animation: levitation 5s linear infinite;
+}
+
+.intuitiveBubble_sm {
+  top: 50px;
+  left: 3px;
+  width: 7px;
+  height: 7px;
+  background-color: #7DCBD8;
+  animation-delay: 1.6s;
+}
+
+.intuitiveBubble_lg {
+  top: -12px;
+  left: 12px;
+  width: 13px;
+  height: 13px;
+  background-color: #FB61F8;
+  opacity: 0.8;
+  animation-delay: 2s;
+}
+
+.intuitiveRectangle {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 20px;
+  height: 12px;
+  border: 3px solid #FB61F8;
+  animation: levitation 5s linear infinite 0.5s;
+}
+
+/*____________________________________________________________
+##### Intuitive Dialog
+____________________________________________________________*/
+.intuitiveDialog {
+  position: absolute;
+  top: 2px;
+  left: -15px;
+  width: 25px;
+  height: 20px;
+  animation: levitation 5s linear infinite 0.8s;
+}
+
+.intuitiveDialog__cloud {
+  position: absolute;
+  width: 25px;
+  height: 15px;
+  background-color: #535EE9;
+  opacity: 0.8;
+}
+.intuitiveDialog__cloud:before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 5px;
+  width: 0;
+  height: 0;
+  border-top: 5px solid #535EE9;
+  border-right: 5px solid transparent;
+}
+
+.intuitiveDialog__lineWrap {
+  position: absolute;
+  top: 4px;
+  right: 7px;
+  width: 23px;
+  height: 6px;
+}
+
+.intuitiveDialog__line {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  overflow: hidden;
+}
+.intuitiveDialog__line:nth-child(2) {
+  bottom: 0;
+  right: 0px;
+  width: 15px;
+}
+.intuitiveDialog__line:after {
+  content: "";
+  position: absolute;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #BBBBFB;
+  animation: slide 3.5s ease infinite;
+}
+.intuitiveDialog__line:nth-child(2):after {
+  animation-delay: 0.3s;
+}
+
+/*____________________________________________________________
+##### Intuitive Landscape
+____________________________________________________________*/
+.landscape {
+  position: absolute;
+  top: 35px;
+  right: -26px;
+  width: 35px;
+  height: 25px;
+  animation: levitation 5s linear infinite 1.4s;
+}
+
+.landscapeShadow {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 32px;
+  height: 22px;
+  background-color: #2a333c;
+}
+
+.landscapePicture {
+  position: relative;
+  width: 32px;
+  height: 22px;
+  overflow: hidden;
+}
+
+.landscapePicture__bg {
+  width: 100%;
+  height: 100%;
+  background-color: #7dcbd8;
+  opacity: 0.8;
+  animation: changeDay 10s linear infinite;
+}
+
+.landscapePicture__mountainsWrap {
+  position: absolute;
+  bottom: 3px;
+  right: 3px;
+  width: 25px;
+  height: 13px;
+}
+
+.landscapePicture__mountain {
+  position: absolute;
+  bottom: 0;
+}
+.landscapePicture__mountain:nth-child(1) {
+  border-left: 6.5px solid transparent;
+  border-right: 6.5px solid transparent;
+  border-bottom: 8px solid #fff;
+}
+.landscapePicture__mountain:nth-child(2) {
+  right: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 13px solid #fff;
+}
+
+.landscapePicture__dayWrap {
+  position: absolute;
+  top: 7px;
+  left: 1px;
+  width: 30px;
+  height: 30px;
+  animation: rotateRays 10s linear infinite;
+}
+
+.landscapePicture__dayWrap,
+.landscapePicture__sun,
+.landscapePicture__moon {
+  border-radius: 50%;
+}
+
+.landscapePicture__sun,
+.landscapePicture__moon {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.landscapePicture__sun {
+  top: -5px;
+  width: 5px;
+  height: 5px;
+  background-color: #fff;
+}
+
+.landscapePicture__moon {
+  bottom: -4px;
+  width: 7px;
+  height: 7px;
+  box-shadow: 2px 2px 0 0 #fec712;
+  transform: rotate(120deg);
+}
+
+/*____________________________________________________________
+##### Intuitive Neck
+____________________________________________________________*/
+.intuitiveNeck {
+  bottom: -3px;
+  width: 22px;
+  height: 4px;
+  background-color: #FFBA55;
+}
+
+/*____________________________________________________________
+##### Intuitive Base Housing
+____________________________________________________________*/
+.intuitiveBaseHousing {
+  bottom: -17px;
+  width: 22px;
+  height: 14px;
+  border: solid #002188;
+  border-width: 0 2px 0 2px;
+}
+
+.intuitiveBaseHousing__line {
+  position: absolute;
+  left: -5px;
+  width: 28px;
+  height: 2px;
+  background-color: #535EE9;
+}
+.intuitiveBaseHousing__line:nth-child(2) {
+  top: 4px;
+}
+.intuitiveBaseHousing__line:nth-child(3) {
+  top: 8px;
+}
+.intuitiveBaseHousing__line:nth-child(4) {
+  top: 12px;
+}
+
+.intuitiveBaseHousing__contact {
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 2px;
+  background-color: #535EE9;
+}
+
+/*____________________________________________________________
+# Animation Pack
+____________________________________________________________*/
+@keyframes slide {
+  0% {
+    left: -100%;
+  }
+  22% {
+    left: 0%;
+  }
+  78% {
+    left: 0%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+@keyframes rotateRays {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes changeDay {
+  0% {
+    background-color: #7dcbd8;
+  }
+  25% {
+    background-color: #2a333c;
+  }
+  60% {
+    background-color: #2a333c;
+  }
+  75% {
+    background-color: #7dcbd8;
+  }
+  100% {
+    background-color: #7dcbd8;
+  }
+}
+@keyframes lineDiagram {
+  0% {
+    height: 10%;
+  }
+  50% {
+    height: 100%;
+  }
+  100% {
+    left: 10%;
+  }
+}
+@keyframes levitation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+/*____________________________________________________________
+## Animation Icons
+____________________________________________________________*/
+@keyframes learnabilityScrollCode {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: -18px;
+  }
+}
+@keyframes keyboardClick {
+  0% {
+    background-color: #fff;
+  }
+  95% {
+    background-color: #fff;
+  }
+  100% {
+    background-color: #000;
+  }
+} 
+ .contact {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  position: relative;
+  min-height: 550px;
+  min-width: 1100Px;
+  margin-left: 50px;
+  z-index: 1;
+}
+.container .contactInfo {
+  position: absolute;
+  top: 40px;
+  width: 300px;
+  height: calc(100% - 120px);
+  background-color: #535EE9;
+  padding:  40px;
+  border-radius: 5px;
+  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 20px 25px rgba(0,0,0,0.15);
+  z-index: 2;
+}
+.container .contactInfo h2 {
+  position: relative;
+  color:  rgba(255,255,255,1);
+  font-size: 24px;
+  font-weight: 700;
+}
+.container .contactInfo ul.info {
+  position: relative;
+  margin: 20px 0;
+}
+.container .contactInfo ul.info li {
+  position: relative;
+  list-style: none;
+  display: flex;
+  margin: 25px 0;
+  cursor: pointer;
+  align-items: flex-start;
+}
+.container .contactInfo ul.info li span:nth-child(1) {
+  min-width: 30px;  
+}
+.container .contactInfo ul.info li span:nth-child(1) i {
+  color: rgba(255,255,255,0.2);
+}
+.container .contactInfo ul.info li span:nth-child(2) {
+  color: rgba(255,255,255,0.2);
+  margin-left: 10px;
+  font-weight: 500;
+  transition: all 0.5s ease;
+}
+.container .contactInfo ul.info li span:nth-child(2) a {
+  text-decoration: none;
+  color:  rgba(255,255,255,0.2);
+  transition: all 0.5s ease;
+}
+.container .contactInfo ul.info li span:nth-child(2):hover,
+.container .contactInfo ul.info li span:nth-child(2):hover a
+ {
+  color: rgba(255,255,255,1);
+}
+.container .contactInfo ul.sci {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin-top: calc(100% - 150px);;
+  padding: 0 15px;
+}
+.container .contactInfo ul.sci li:hover:before {
+  content: '';
+  position: absolute;
+  background-size: 40px 40px;
+  width: 35px;
+  height: 35px;
+  top: -1px;
+  left: -1px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+.container .contactInfo ul.sci li:nth-child(1):hover:before {
+  background-image: url('./img/icones/behance.png');
+  background-position: center;
+}
+.container .contactInfo ul.sci li:nth-child(2):hover:before {
+  background-image: url('./img/icones/deviantart.png');
+  background-position: center;
+}
+.container .contactInfo ul.sci li:nth-child(3):hover:before {
+  background-image: url('./img/icones/github.png');
+  background-position: center;
+}
+.container .contactInfo ul.sci li:nth-child(4):hover:before {
+  background-image: url('./img/icones/dribbble.png');
+  background-position: center;
+}
+.container .contactInfo ul.sci li:nth-child(5):hover:before {
+  background-image: url('./img/icones/twitter.png');
+  background-position: center;
+}
+.container .contactInfo ul.sci li:hover i {
+  opacity: 0;
+}
+.container .contactInfo ul.sci li {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  width: 35px;
+  height: 35px;
+  border: 1px solid rgba(255,255,255,1);
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+.container .contactInfo ul.sci li i {
+  position: relative;
+  font-size: 18px;
+  color:  rgba(255,255,255,1);
+}
+.container .contactForm {
+  position: absolute;
+  padding:  70px 50px;
+  padding-left: 250px;
+  margin-left: 150px;
+  width: calc(100% - 150px);
+  height: 100%;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter:  blur(10px);
+  border-radius: 5px;
+  border-left: 1px solid rgba(255,255,255,0.25);
+  border-top: 1px solid rgba(255,255,255,0.25);
+  box-shadow: 0 50px 50px rgba(0,0,0,0.25);
+  z-index: 1;
+}
+.container .contactForm h2 {
+  color: rgba(255,255,255,1);
+  font-size: 24px;
+  font-weight: 700;
+}
+.container .contactForm .formBox {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-top:  30px;
+}
+.container .contactForm .formBox .inputBox {
+  position: relative;
+  margin-bottom: 35px;  
+}
+.container .contactForm .formBox .inputBox.w50 {
+  width: 47%;
+}
+.container .contactForm .formBox .inputBox.w100 {
+  width: 100%;
+}
+.container .contactForm .formBox .inputBox input,
+.container .contactForm .formBox .inputBox textarea {
+  width: 100%;
+  resize: none;
+  padding: 5px 0;
+  font-size: 20px;
+  font-weight: 500;
+  color: rgba(255,255,255,1);
+  background: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid rgba(255,255,255,1);
+}
+.container .contactForm .formBox .inputBox textarea {
+  height:  120px;
+}
+.container .contactForm .formBox .inputBox span {
+  position: absolute;
+  left: 0;
+  padding: 5px 0;
+  pointer-events: none;
+  color: #FB61F8;
+  font-size: 15px;
+  font-weight: 300;
+  transition: 0.5s ease;
+}
+.container .contactForm .formBox .inputBox input:focus ~ span,
+.container .contactForm .formBox .inputBox input:valid ~ span,
+.container .contactForm .formBox .inputBox textarea:focus ~ span,
+.container .contactForm .formBox .inputBox textarea:valid ~ span {
+  transform: translateY(-20px);
+  text-transform: uppercase;
+  font-size: 10px;
+}
+.container .contactForm .formBox .inputBox input[type="submit"] {
+  position: relative;
+  cursor: pointer;
+  background: #FB61F8;
+  color: rgba(255,255,255,1);
+  border: none;
+  max-width: 150px;
+  font-size: 15px;
+  padding: 10px;
+}
+.container .contactForm .formBox .inputBox input[type="submit"]:hover {
+  background: #FFA7FD;
+}
+#starshower {
+  position: absolute;
+  z-index: 0;
+}
+@media (max-width: 1200px) {
+  .container {
+    display: flex;
+    width:  90%;
+    min-width: auto;
+    margin: 20px 20px 20px 250px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15); 
+  }
+  .container .contactInfo {
+    top: 0;
+    height: 550px;
+    position: relative;
+    box-shadow: none;
+  }
+  .container .contactForm {
+    position: relative;
+    width:  calc(100% - 350px);
+    padding-left: 0px;
+    margin-left: 0px;
+    padding:  40px;
+    height: 550px;
+    box-shadow: none;
+  }
+}
+@media (max-width: 991px) {
+  .container {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .container .contactForm {
+    width: 100%;
+    height: auto;
+  }
+  .container .contactInfo {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+  }
+  .container .contactInfo .informations {
+    width:  40%;
+    margin: 0;
+  }
+  .container .contactInfo ul.sci {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 45px;
+    margin-top: 40px;
+    width: 50%;
+  }
+}
+@media (max-width: 600px) {
+  .container {
+    margin-left: 20px;
+  }
+  .container .contactForm {
+    padding: 25px;
+    height: 600px;
+  }
+  .container .contactInfo .informations {
+    width: 100%;
+  }
+  .container .contactInfo {
+    padding: 25px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .container .contactInfo ul.sci {
+    margin-top: 10px; 
+    width: 100%;  
+  }
+  .container .contactForm .formBox .inputBox.w50 {
+    width: 100%;
+  }
+} 
+@media (max-width: 480px) {
+  .container {
+    margin: 0;
+  }
+  .container .contactForm {
+    height: 600px;
+  }
+  .container .contactInfo {
+    height: 375px;
+  }
 }
